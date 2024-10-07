@@ -16,4 +16,9 @@ Backend:
 
 # useful links 
      - my repo of class notes on how to setup a fullstack MERN application 
+     - mongose db documentation - https://mongoosejs.com/ 
+     - Reqbin - what I used to test all my routes - https://reqbin.com/ 
+
+# acknowledgements 
+
 ---------- capstone assignment notes: ------------
