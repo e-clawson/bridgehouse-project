@@ -42,6 +42,18 @@ app.post('/exhibits', async (req,res) =>{
     }
 })
 
+app.delete("/exhibits/:id", async (req,res) => {
+    try {
+        const deletedExhibit= await ExhibitInfo.findByIdAndDelete(req.params.id)
+        console.log(deletedExhibit)
+        console.log("DELETE /exhibits/:id")
+        res.status(200).json(deletedExhibit)
+    } catch(e) {
+        console.log(e)
+        res.status(400).json(e)
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
     connectDB()
