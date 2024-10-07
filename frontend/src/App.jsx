@@ -61,7 +61,7 @@ function App() {
       <div className="exhibit-display">
         {exhibits.map(exhibit => 
           <div key={exhibit._id}>
-            <p>{exhibit._id}</p> 
+            <p>{exhibit.title}</p> 
             <button></button>
           </div>
         )}

@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 const exhibitSchema = mongoose.Schema({
-   title: { type: String}, 
+   title: { type: String }, 
 })
 
-const exhibitInfo = mongoose.model('exhibitSchema', exhibitSchema)
+const ExhibitInfo = mongoose.model('exhibitSchema', exhibitSchema)
 
-export default exhibitInfo
+export default ExhibitInfo
 
  // title: { type: String}, 
     // subtitle: {type: String}, 

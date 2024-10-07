@@ -2,11 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import "dotenv/config";
 import connectDB from "./config.js";
-import exhibitInfo from './models/exhibitInfoModel.js';
+import ExhibitInfo from './models/exhibitInfoModel.js';
 
 const app = express()
 
 app.use(cors())
+
+app.use(express.json())
 
 const PORT = 8000
 
@@ -18,7 +20,7 @@ app.get('/test', (req, res) => {
 //route to GET all exhibit documents from the database 
 app.get('/exhibits', async(req,res) => {
     try {
-        const exhibits = await exhibitInfo.find({})
+        const exhibits = await ExhibitInfo.find({})
         console.log('GET /exhibits')
         res.status(200).json(exhibits)
     }catch(e) {
@@ -27,11 +29,11 @@ app.get('/exhibits', async(req,res) => {
     }
 })
 
-//route to POST - route that adds an exhibit document to the database 
+//route to POST - route that creates and adds an axhibit to the DB  
 app.post('/exhibits', async (req,res) =>{
     try { 
         console.log(req.body)
-        const newExhibitInfo = await exhibitInfo.create(req.body)
+        const newExhibitInfo = await ExhibitInfo.create(req.body)
         console.log("POST /exhibits")
         res.status(201).json(newExhibitInfo)
     } catch (e) {
