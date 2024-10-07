@@ -9,6 +9,9 @@ function App() {
   const [exhibits, setExhibits] = useState([])
   //track and update the state of the input box
   const [input, setInput] = useState('')
+  const [isEditing, setIsEditing] = useState(false)
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState("");
 
   //GET - gets all the exhibits from the database 
   useEffect(() => {
@@ -69,10 +72,27 @@ function App() {
   }
   
   //make a PATCH request - edit the exhibit by ID 
-  
+  const handleEditClick = (id, text) => {
+    setIsEditing(true);
+    setEditId(id);
+    setEditText(text);
+  };
 
+  async function handleEditSubmit(id) {
+    const exhibit = exhibits.find((exhibit) => exhibit._id == id);
 
+    const response = await fetch(`${BASE_URL}/exhibits/${exhibit._id}`, {
+      method: "PUT", 
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: editText
+      })
+    })
+    const updatedExhibit = await response.json();
+    const updatedExhibits = exhibits.map((exhibit) => (exhibit._id === updatedExhibit._id ? updatedExhibit : exhibit));
 
+    setExhibits(updatedExhibits)
+  }
 
   return (
     <>
@@ -80,9 +100,23 @@ function App() {
       <h2>Exhibits:</h2>
       <div className="exhibit-display">
         {exhibits.map(exhibit => 
-          <div key={exhibit._id}>
-            <p>{exhibit.title}</p> 
-            <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
+          <div key={exhibit._id} className='exhibit-card'>
+            {isEditing && editId === exhibit._id ? (
+               <form onSubmit={() => handleEditSubmit(exhibit._id)}>
+               <input
+                 type="text"
+                 value={editText}
+                 onChange={(e) => setEditText(e.target.value)}
+               />
+               <button type="submit">Update</button>
+               </form>
+            ) : (
+              <>
+                <p>{exhibit.title}</p> 
+                <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
+                <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
+              </>
+            )}
           </div>
         )}
       </div>
