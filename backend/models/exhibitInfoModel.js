@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const exhibitInfo = mongoose.schema({
+const exhibitSchema = mongoose.schema({
     title: { type: String}, 
     subtitle: {type: String}, 
     floor: { type: Number}, //add a default of 0? 
@@ -13,3 +13,7 @@ const exhibitInfo = mongoose.schema({
     pageContent: {type: String}, 
     additionalResources: {type, String}, 
 })
+
+const exhibitInfo = mongoose.model('exhibitSchema', exhibitSchema)
+
+export default exhibitInfo
