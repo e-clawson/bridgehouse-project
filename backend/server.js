@@ -10,10 +10,12 @@ app.use(cors())
 
 const PORT = 8000
 
+//route to test connection to backend server
 app.get('/test', (req, res) => {
     res.json("hello")
 })
 
+//route to GET all exhibit documents from the database 
 app.get('/exhibits', async(req,res) => {
     try {
         const exhibits = await exhibitInfo.find({})
@@ -25,7 +27,18 @@ app.get('/exhibits', async(req,res) => {
     }
 })
 
-
+//route to POST - route that adds an exhibit document to the database 
+app.post('/exhibits', async (req,res) =>{
+    try { 
+        console.log(req.body)
+        const newExhibitInfo = await exhibitInfo.create(req.body)
+        console.log("POST /exhibits")
+        res.status(201).json(newExhibitInfo)
+    } catch (e) {
+        console.log(e)
+        res.status(400).json(e)
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
