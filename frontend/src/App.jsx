@@ -10,6 +10,7 @@ function App() {
   //track and update the state of the input box
   const [input, setInput] = useState('')
 
+  //GET - gets all the exhibits from the database 
   useEffect(() => {
     async function test() {
       const response = await fetch(`${BASE_URL}/exhibits`)
@@ -34,7 +35,7 @@ function App() {
     const exhibit = {
       title: input
     }
-    //make the POST request - fetch 
+    //make the POST request - create a new exhibit display
     const response = await fetch(`${BASE_URL}/exhibits`, {
       method: 'POST',
       body: JSON.stringify(exhibit),
@@ -66,8 +67,11 @@ function App() {
       console.log(e)
     }
   }
-  //right now the delete button is working but it isn't re-rendering the 
-  //exhibit list on the page 
+  
+  //make a PATCH request - edit the exhibit by ID 
+  
+
+
 
 
   return (

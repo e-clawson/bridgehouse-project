@@ -7,7 +7,6 @@ import ExhibitInfo from './models/exhibitInfoModel.js';
 const app = express()
 
 app.use(cors())
-
 app.use(express.json())
 
 const PORT = 8000
@@ -48,6 +47,18 @@ app.delete("/exhibits/:id", async (req,res) => {
         console.log(deletedExhibit)
         console.log("DELETE /exhibits/:id")
         res.status(200).json(deletedExhibit)
+    } catch(e) {
+        console.log(e)
+        res.status(400).json(e)
+    }
+})
+
+app.put('/exhibits/:id', async (req,res) => {
+    try{
+        const editedExhibit = await ExhibitInfo.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        console.log(editedExhibit)
+        console.log("PUT /exhibits/:id")
+        res.status(200).json(editedExhibit)
     } catch(e) {
         console.log(e)
         res.status(400).json(e)
