@@ -50,10 +50,26 @@ function App() {
     setInput("")
   }
 
-  //right now the post request is working but for some reason 
-  //it isn't adding any of the information like text 
-  //it is just creating a new document with the id. 
-  //the ids will post to the page though
+  //make the DELETE request - delete an exhibit by ID 
+  async function handleDelete(id) {
+    try{
+      const response = await fetch(`${BASE_URL}/exhibits/${id}`, {
+        method: "DELETE", 
+      })
+      if (!response.ok) {
+        throw new Error("something went wrong - status: " + response.status)
+      }
+      const newExhibits = exhibits.filter(exhibit => exhibit._id !== id)
+      setExhibits(newExhibits)
+    } catch(e) {
+      console.log("in the catch - something went wrong")
+      console.log(e)
+    }
+  }
+  //right now the delete button is working but it isn't re-rendering the 
+  //exhibit list on the page 
+
+
   return (
     <>
       <h1>Bridgehouse Project</h1>
@@ -62,7 +78,7 @@ function App() {
         {exhibits.map(exhibit => 
           <div key={exhibit._id}>
             <p>{exhibit.title}</p> 
-            <button></button>
+            <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
           </div>
         )}
       </div>
