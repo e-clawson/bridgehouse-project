@@ -10,6 +10,7 @@ frontend:
     - react-dom 
     - dotenv (to install, cd to front end and run the following command 'npm i dotenv')
     - firebase (to install, cd to front end and run the following command 'npm i firebase')
+        The dummy admin is admin@admin.com (Bridges123!)
 
 
 Backend: 
