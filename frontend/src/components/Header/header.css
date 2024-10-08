@@ -1,12 +1,26 @@
-body{
-    background-image: url(frontend/src/assets/bridge-lift.jpg);
+.header{
+    background-image: url("../../assets/bridge.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    height: 300px;
+    color: #ddd;
+    height: 400px;
+}
+
+#header .wave {
+    position: absolute;
+    bottom: 0;
 }
 
 .wave{
-    background-image: url(frontend/src/assets/wave.png) left top repeat-x;
+    background: url("../../assets/wave.png");
+    background-position: left top;
+    background-repeat: repeat-x;
     height: 15px;
     width: 100%;
+    padding-bottom: 10px;
+}
+
+img{
+    height: 100px;
+    width: 150px;
 }
