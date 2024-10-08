@@ -1,14 +1,36 @@
 import React from "react";
 import { useState, useContext } from "react";
 import {auth} from "../../config"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function SignIn(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(null)
+    const [loading, setLoading] = useState(null)
     
     const handleLogin = async (e) => {
         e.preventDefault()
         console.log("submit", email, password)
+        setError(null)
+        setLoading(true)
+        try {
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            setSuccess("SignIn Successful")
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setError(errorMessage)
+        });
+        } catch (error){
+            console.log(error.code)
+            setError(error.code)
+        }
     }  
 
     return(
@@ -24,7 +46,11 @@ export default function SignIn(){
                     <input type="password" onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div>
-                    <button>Log In</button>
+                    {loading === true ? "Loading..." : <button>Log In</button>}
+                </div>
+                <div>
+                    <h5>{error}</h5>
+                    <h5>{success}</h5>
                 </div>
             </form>
         </div>

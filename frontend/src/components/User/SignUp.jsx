@@ -6,13 +6,25 @@ import {createUserWithEmailAndPassword} from "firebase/auth"
 export default function SignUp(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(null)
+    const [loading, setLoading] = useState(null)
     
     const handleSignUp = async (e) => {
         e.preventDefault()
         console.log("submit", email, password)
-
-        let response = await createUserWithEmailAndPassword(auth,email,password)
-        console.log(response)
+        setError(null)
+        setLoading(true)
+        try{ 
+            let response = await createUserWithEmailAndPassword(auth,email,password)
+            console.log(response)
+            setError(null)
+            setSuccess("New User Created")
+        } catch (error) {
+            console.log(error.code)
+            setError(error.code)
+        }
+        setLoading(false)
     }  
 
     return(
@@ -28,7 +40,11 @@ export default function SignUp(){
                     <input type="password" onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div>
-                    <button>Sign Up</button>
+                    {loading === true ? "Loading..." : <button>Sign Up</button>}
+                </div>
+                <div>
+                    <h5>{error}</h5>
+                    <h5>{success}</h5>
                 </div>
             </form>
         </div>
