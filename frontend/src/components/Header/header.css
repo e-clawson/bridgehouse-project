@@ -1,0 +1,12 @@
+body{
+    background-image: url(frontend/src/assets/bridge-lift.jpg);
+    background-size: cover;
+    display: flex;
+    height: 300px;
+}
+
+.wave{
+    background-image: url(frontend/src/assets/wave.png) left top repeat-x;
+    height: 15px;
+    width: 100%;
+}

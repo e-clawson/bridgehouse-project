@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import './App.css'
+import Header from './components/Header/Header'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -96,6 +97,7 @@ function App() {
 
   return (
     <>
+    <Header />
       <h1>Bridgehouse Project</h1>
       <h2>Exhibits:</h2>
       <div className="exhibit-display">
