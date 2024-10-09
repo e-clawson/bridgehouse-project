@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Header from '../Header/Header'
+import "./exhibits.css"
 
 export const BASE_URL = 'http://localhost:8000'
 
