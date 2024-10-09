@@ -11,6 +11,18 @@ export default function Exhibits() {
   const [isEditing, setIsEditing] = useState(false)
   const [editId, setEditId] = useState(null);
   const [editText, setEditText] = useState("");
+  const [formData, setFormData] = useState({
+    title: "", 
+    subtitle: "", 
+    floor: "", 
+    dateNum: "", 
+    dateString: "", 
+    image: "",
+    imgCaption: "",
+    pageContent: "", 
+    additionalResources: "", 
+    tags: "", 
+  })
 
   //GET - gets all the exhibits from the database 
   useEffect(() => {
@@ -84,7 +96,7 @@ export default function Exhibits() {
       method: "PUT", 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        title: editText
+        title: editText,
       })
     })
     const updatedExhibit = await response.json();
@@ -118,9 +130,52 @@ export default function Exhibits() {
           </div>
         )}
       </div>
+
       <div className="exhibit-form">
         <form onSubmit={handleSubmit}>
-          <input value={input} onChange={handleChange}/>
+          <div>
+            <h3>Add A Topic:</h3>
+            <div>
+              <label for="title">Title</label>
+              <input value={input} id="fname" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="sub-title">Sub-Title</label>
+              <input value={input} id="sub-title" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="floor">Museum Floor</label>
+              <input value={input} id="floor" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="date-num">Date (number only)</label>
+              <input value={input} id="date-num" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="date"> date (text and numbers)</label>
+              <input value={input} id="date" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="image"> Image</label>
+              <input value={input} id="image" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="image-caption">Image Caption</label>
+              <input value={input} id="image-caption" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="page-content">Page Content</label>
+              <input value={input} id="page-content" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="additional-resources">Additional Resources (links, citations)</label>
+              <input value={input} id="additional-resources" onChange={handleChange}/>
+            </div>
+            <div>
+              <label for="tags">Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
+              <input value={input} id="tags" onChange={handleChange}/>
+            </div>
+          </div>
           <button>Add</button>
         </form>
       </div>

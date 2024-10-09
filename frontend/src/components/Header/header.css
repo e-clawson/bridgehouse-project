@@ -17,8 +17,8 @@
     background-repeat: repeat-x;
     height: 15px;
     width: 100%;
-    position: absolute;
-    bottom: 0px;
+    /* position: absolute;
+    bottom: 0px; */
 }
 
 img{
