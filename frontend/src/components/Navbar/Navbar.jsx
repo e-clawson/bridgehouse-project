@@ -2,8 +2,8 @@ import './navbar.css'
 
 export default function Navbar(){
     return (
-        <div class="navbar-header">
-            <div class="header-items">
+        <div className="navbar-header">
+            <div className="header-items">
                 <a class="active" href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#events">Events</a>

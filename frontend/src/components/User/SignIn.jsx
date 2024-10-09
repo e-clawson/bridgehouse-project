@@ -16,7 +16,8 @@ export default function SignIn(){
         setError(null)
         setLoading(true)
         try {
-            signInWithEmailAndPassword(auth, email, password)
+            let response = signInWithEmailAndPassword(auth, email, password)
+            console.log(response )
             .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;

@@ -8,7 +8,7 @@ export default function Header(){
                 <img src={logo} alt="bridgehouse museum logo"></img>
             </div>
             <h1 className="sub-title">Celebrating the Chicago River and its world-famous moveable bridges</h1>
-            <div classname="wave"></div>
+            <div className="wave"></div>
         </div>
     )
 }
