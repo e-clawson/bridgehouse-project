@@ -10,8 +10,11 @@ import SignIn from './components/User/SignIn'
 import {signOut} from "firebase/auth"
 import {auth} from "./config"
 import About from './components/Pages/About'
+import Events from './components/Pages/Events'
 import Home from './components/Pages/Home'
 import BridgeLifts from './components/Pages/BridgeLifts'
+import Rentals from './components/Pages/Rentals'
+import Contact from './components/Pages/Contact'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -33,8 +36,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About/>} />
-      <Route path="/bridge-lifts" element={<BridgeLifts/>} />
-
+      <Route path="/events" element={<Events/>} />
+      <Route path="/bridgelifts" element={<BridgeLifts/>} />
+      <Route path="/exhibits" element={<Exhibits/>} />
+      {/* <Route path="/suport" element={<BridgeLifts/>} /> */}
+      <Route path="/venue-rentals" element={<Rentals/>} />
+      <Route path="/contact" element={<Contact/>} />
     </Routes>
     </>
   )
