@@ -1,18 +1,31 @@
 import './navbar.css'
+import React from 'react'
+import {Link} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
+
 
 export default function Navbar(){
+
+    // const Navigate = useNavigate()
+
     return (
         <div className="navbar-header">
             <div className="header-items">
-                <a class="active" href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#events">Events</a>
-                <a href="#bridge-lifts">Bridge Lifts</a>
-                <a href="#exhibits">Exhibits</a>
-                <a href="#support">Support</a>
-                <a href="#rentals">Venue Rentals</a>
-                <a href="#contact">Contact</a>
+                <Link className="active" to="/">Home</Link>
+                <Link to="/about">About</Link>
+                <Link to="/events">Events</Link>
+                <Link to="/bridgelifts">Bridge Lifts</Link>
+                <Link to="/exhibits">Exhibits</Link>
+                <Link to="/support">Support</Link>
+                <Link to="/venue-rentals">Venue Rentals</Link>
+                <Link to="/contact">Contact</Link>
             </div>
         </div>
     )
 }
+
+// {userAuth && <Link className="active" to="/">Home</Link>}
+// {!userAuth &&  <Link to="/signin">sign in</Link>}
+// {!userAuth &&  <Link to="/signup">sign up</Link>}
+// {userAuth && <button  onClick={logout}>Log Out</button>}
+//   {/* <a href="#about">About</a> */}
