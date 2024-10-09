@@ -11,6 +11,7 @@ import {signOut} from "firebase/auth"
 import {auth} from "./config"
 import About from './components/Pages/About'
 import Home from './components/Pages/Home'
+import BridgeLifts from './components/Pages/BridgeLifts'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -32,6 +33,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About/>} />
+      <Route path="/bridge-lifts" element={<BridgeLifts/>} />
 
     </Routes>
     </>
