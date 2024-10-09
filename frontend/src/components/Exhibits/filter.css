@@ -1,0 +1,30 @@
+.filter-btn-box{
+    background: #1864b0;
+    color: white;
+}
+.filter-btn{
+    float: left;
+    background-color: #E0E7EF;
+    color: #1C478C;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.filter-btn:hover{
+    background-color: #ddd;
+    color: black;
+} 
+
+.filter-btn:active{
+    background: #84A4C5;
+    color: white;
+} 
+
+.filter-title{
+    margin: auto;
+    align-items: center;
+}

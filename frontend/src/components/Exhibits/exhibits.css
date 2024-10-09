@@ -22,3 +22,12 @@
 .button{
     display: flex
 }
+
+.filter-search{
+    background-color: rgb(251, 248, 248);
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 50px;
+    border: 1px solid #D0D7DE;
+}

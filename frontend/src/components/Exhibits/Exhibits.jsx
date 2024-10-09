@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar'
 import Header from '../Header/Header'
 import "./exhibits.css"
 import Search from '../Search'
+import Filter from "./Filter"
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -113,7 +114,10 @@ export default function Exhibits() {
     <>
       <Navbar />
       <Header />
-      <Search />
+      <div className='filter-search'>
+        <Filter />
+        <Search />
+      </div>
       {/* made the searchbar component but need to get it to display just the
       mapped items matching the search */}
       <h2>Exhibits:</h2>
