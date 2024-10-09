@@ -4,7 +4,9 @@ import {auth} from "../../config"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from "react-router-dom"
 
-export default function SignIn(){
+export default function SignIn({setUserAuth}){
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -15,11 +17,11 @@ export default function SignIn(){
         e.preventDefault()
 
         console.log("submit", email, password)
-        setError(null)
-        setLoading(true)
         try {
-            let response = signInWithEmailAndPassword(auth, email, password)
+            let response = await signInWithEmailAndPassword(auth, email, password)
             console.log(response.user)
+            navigate("/")
+            setUserAuth(response.user)
         } catch (error){
             console.log(error.code)
             setError(error.code)
@@ -39,11 +41,12 @@ export default function SignIn(){
                     <input type="password" onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div>
-                    {loading === true ? "Loading..." : <button>Log In</button>}
+                    <button>Log In</button>
                 </div>
                 <div>
-                    <h5>{error}</h5>
-                    <h5>{success}</h5>
+                    {loading && <h5>Loading...</h5>}
+                    {success && <h5 style={{color: "green"}}>Login Successful</h5>}
+                    {error && <h5 style={{color: "red"}}>{error}</h5>}
                 </div>
             </form>
         </div>
