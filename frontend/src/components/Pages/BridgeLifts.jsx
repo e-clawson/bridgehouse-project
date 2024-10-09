@@ -6,7 +6,7 @@ export default function BridgeLifts(){
          <div className="bridge-lifts">
             <Navbar />
             <Header />
-            <h1>BridgeLifts</h1>
+            <h1>Bridge Lifts</h1>
         </div>
     )
 }
