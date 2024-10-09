@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import {auth} from "../../config"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {useNavigate} from "react-router-dom"
 
 export default function SignIn(){
     const [email, setEmail] = useState('')
@@ -12,22 +13,13 @@ export default function SignIn(){
     
     const handleLogin = async (e) => {
         e.preventDefault()
+
         console.log("submit", email, password)
         setError(null)
         setLoading(true)
         try {
             let response = signInWithEmailAndPassword(auth, email, password)
-            console.log(response )
-            .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            setSuccess("SignIn Successful")
-            })
-            .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            setError(errorMessage)
-        });
+            console.log(response.user)
         } catch (error){
             console.log(error.code)
             setError(error.code)

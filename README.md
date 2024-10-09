@@ -8,6 +8,7 @@ live demo here:
 frontend: 
     - react
     - react-dom 
+    - react-router-dom - to install, cd to frontend and run the following cmmand "npm i react-router-dom"
     - dotenv (to install, cd to front end and run the following command 'npm i dotenv')
     - firebase (to install, cd to front end and run the following command 'npm i firebase')
         The dummy admin is admin@admin.com (Bridges123!)
