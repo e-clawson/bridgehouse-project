@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Header from '../Header/Header'
 import "./exhibits.css"
+import Search from '../Search'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -112,6 +113,9 @@ export default function Exhibits() {
     <>
       <Navbar />
       <Header />
+      <Search />
+      {/* made the searchbar component but need to get it to display just the
+      mapped items matching the search */}
       <h2>Exhibits:</h2>
       <div className="exhibit-display">
         {exhibits.map(exhibit => 
