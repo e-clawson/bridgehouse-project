@@ -1,5 +1,5 @@
 .header{
-    background-image: url("../../assets/bridge.jpg");
+    background-image: url("../../assets/bridgehousebanner.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: #ddd;
@@ -17,8 +17,6 @@
     background-repeat: repeat-x;
     height: 15px;
     width: 100%;
-    /* position: absolute;
-    bottom: 0px; */
 }
 
 img{

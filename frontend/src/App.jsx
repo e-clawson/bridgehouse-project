@@ -39,7 +39,6 @@ function App() {
       <Route path="/events" element={<Events/>} />
       <Route path="/bridgelifts" element={<BridgeLifts/>} />
       <Route path="/exhibits" element={<Exhibits/>} />
-      {/* <Route path="/suport" href="https://interland3.donorperfect.net/weblink/weblink.aspx?name=E145588&id=139"/> */}
       <Route path="/venue-rentals" element={<Rentals/>} />
       <Route path="/contact" element={<Contact/>} />
     </Routes>
