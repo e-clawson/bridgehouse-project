@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Navbar from '../Navbar/Navbar'
+import Header from '../Header/Header'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -107,6 +109,8 @@ export default function Exhibits() {
 
   return (
     <>
+      <Navbar />
+      <Header />
       <h2>Exhibits:</h2>
       <div className="exhibit-display">
         {exhibits.map(exhibit => 

@@ -16,7 +16,7 @@ export default function Navbar(){
                 <Link to="/events">Events</Link>
                 <Link to="/bridgelifts">Bridge Lifts</Link>
                 <Link to="/exhibits">Exhibits</Link>
-                <Link to="/support">Support</Link>
+                <Link to="https://interland3.donorperfect.net/weblink/weblink.aspx?name=E145588&id=139">Support</Link>
                 <Link to="/venue-rentals">Venue Rentals</Link>
                 <Link to="/contact">Contact</Link>
             </div>
