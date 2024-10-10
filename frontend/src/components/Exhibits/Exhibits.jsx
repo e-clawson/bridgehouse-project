@@ -8,7 +8,7 @@ import Filter from "./Filter"
 
 export const BASE_URL = 'http://localhost:8000'
 
-export default function Exhibits() {
+export default function Exhibits({currentUser}) {
   //track and update the state of exhibits
   const [exhibits, setExhibits] = useState([])
   //track and update the state of the input box
@@ -122,74 +122,80 @@ export default function Exhibits() {
       <div className="exhibit-display">
         {exhibits.map(exhibit => 
           <div key={exhibit._id} className='exhibit-card'>
-            {isEditing && editId === exhibit._id ? (
-               <form onSubmit={() => handleEditSubmit(exhibit._id)}>
-               <input
-                 type="text"
-                 value={editText}
-                 onChange={(e) => setEditText(e.target.value)}
-               />
-               <button type="submit">Update</button>
-               </form>
-            ) : (
-              <>
-                <p>{exhibit.title}</p> 
-                <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
-                <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
-              </>
-            )}
+            { currentUser !== null ? <div>
+              {isEditing && editId === exhibit._id ? (
+                <form onSubmit={() => handleEditSubmit(exhibit._id)}>
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                />
+                <button type="submit">Update</button>
+                </form>
+             ) : (
+               <>
+                 <p>{exhibit.title}</p> 
+                 <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
+                 <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
+               </>
+             )}
+            </div> : <></>}
+            
           </div>
         )}
       </div>
 
+      <div>
+      { currentUser !== null ? 
       <div className="exhibit-form">
         <form onSubmit={handleSubmit}>
           <div>
             <h3>Add A Topic:</h3>
-            <div>
-              <label for="title">Title</label>
-              <input value={input} id="fname" onChange={handleChange}/>
+              <div>
+                <label for="title">Title</label>
+                <input value={input} id="fname" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="sub-title">Sub-Title</label>
+                <input value={input} id="sub-title" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="floor">Museum Floor</label>
+                <input value={input} id="floor" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="date-num">Date (number only)</label>
+                <input value={input} id="date-num" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="date"> date (text and numbers)</label>
+                <input value={input} id="date" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="image"> Image</label>
+                <input type="file" value={input} id="image" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="image-caption">Image Caption</label>
+                <input value={input} id="image-caption" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="page-content">Page Content</label>
+                <input value={input} id="page-content" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="additional-resources">Additional Resources (links, citations)</label>
+                <input value={input} id="additional-resources" onChange={handleChange}/>
+              </div>
+              <div>
+                <label for="tags">Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
+                <input value={input} id="tags" onChange={handleChange}/>
+              </div>
             </div>
-            <div>
-              <label for="sub-title">Sub-Title</label>
-              <input value={input} id="sub-title" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="floor">Museum Floor</label>
-              <input value={input} id="floor" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="date-num">Date (number only)</label>
-              <input value={input} id="date-num" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="date"> date (text and numbers)</label>
-              <input value={input} id="date" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="image"> Image</label>
-              <input type="file" value={input} id="image" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="image-caption">Image Caption</label>
-              <input value={input} id="image-caption" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="page-content">Page Content</label>
-              <input value={input} id="page-content" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="additional-resources">Additional Resources (links, citations)</label>
-              <input value={input} id="additional-resources" onChange={handleChange}/>
-            </div>
-            <div>
-              <label for="tags">Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
-              <input value={input} id="tags" onChange={handleChange}/>
-            </div>
-          </div>
           <button>Add</button>
         </form>
-      </div>
+      </div> : <></>}
+    </div>
     </>
   )
 }

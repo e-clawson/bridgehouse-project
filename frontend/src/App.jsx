@@ -5,9 +5,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar'
 import Exhibits from './components/Exhibits/Exhibits'
-import SignUp from './components/User/SignUp'
 import SignIn from './components/User/SignIn'
-import {signOut} from "firebase/auth"
 import {auth} from "./config"
 import About from './components/Pages/About'
 import Events from './components/Pages/Events'
@@ -42,7 +40,7 @@ function App() {
       <Route path="/about" element={<About/>} />
       <Route path="/events" element={<Events/>} />
       <Route path="/bridgelifts" element={<BridgeLifts/>} />
-      <Route path="/exhibits" element={<Exhibits/>} currentUser={currentUser}/>
+      <Route path="/exhibits" element={<Exhibits currentUser={currentUser}/>} />
       <Route path="/venue-rentals" element={<Rentals/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/login" element={<SignIn setCurrentUser={setCurrentUser}/>} />
