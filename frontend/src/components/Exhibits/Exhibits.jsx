@@ -137,7 +137,10 @@ export default function Exhibits({currentUser}) {
                  <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
                </>
              )}
-            </div> : <></>}
+            </div> : 
+            <>
+              <p>{exhibit.title}</p> 
+            </>}
             
           </div>
         )}
