@@ -3,6 +3,20 @@
 live demo here: 
 
 # About 
+    This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 wee software engineering bootcamp. 
+
+    The Bridgehouse Museum's mission is to educate the public on the history of the Chicago River, along with the efforts made to clean and beautify it over the last 40 years, as well as current and ongoing projects to continue to care and advocate for the river. 
+
+    This project seeks to address three issues related to the museum's ability to fulfill its mission: 
+        - floors 2-5 are not accessible to anyone who can't climb stairs 
+        - the museum is only open seasonally 
+        - the current website curation is old, outdated, and in a format that is hard to use 
+    by providing updated digital curation on the website, the bridgehouse museum can provide curation to those who can't access the museum at all or who cant climb the stairs, to those who would want to learn about the history and ecology of the river outside of our open season, and in a format that is accessible and modren(and easy to navigate and cleanly laid out) 
+
+    To accomplish this, I focused on three things: 
+        - Updating the general layout of the website to be more mobile compatible, and to match the styling of the Bridgehouse Museum's parent organization, Friends of the Chicago River
+        - Updating the layout of the exhibits page to inclue card displays for each topic, and a search bar so users can search for a specific topic, as well as filter tabs so users may filter the cards to a specific broader topic such as hitory, nature, etc. - Users can then click on the desired topic to be directed to a page where they can read more 
+        - Adding a new feature - using the Google Maps API to include an interactive map of the river where users can see pinpointed locations where historical events occured plotted on a map, and can select those pinpoints to learn more. My hope is this additional feature can act as a guide for users to use outside the musem along the river and riverwalk, encouraging people to see the locations where history happened, and connect historical events to present day locations. 
 
 # Dependencies 
 frontend: 
