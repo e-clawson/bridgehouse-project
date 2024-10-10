@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-import Navbar from '../Navbar/Navbar'
-import Header from '../Header/Header'
 import "./exhibits.css"
 import Search from '../Search'
 import Filter from "./Filter"
