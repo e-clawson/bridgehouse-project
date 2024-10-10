@@ -1,14 +1,15 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import {auth} from "../../config"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from "react-router-dom"
 
-export default function SignIn({currentUser, setCurrentUser}){
+export default function SignIn({setCurrentUser}){
     const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
     const [loading, setLoading] = useState(null)
@@ -17,14 +18,19 @@ export default function SignIn({currentUser, setCurrentUser}){
         e.preventDefault()
 
         console.log("submit", email, password)
+
+        // let response = await signInWithEmailAndPassword(auth, email, password)
+        //     console.log(response.user)
+        //     setCurrentUser(response.user)
+        //     navigate("/")
+
         try {
             let response = await signInWithEmailAndPassword(auth, email, password)
             console.log(response.user)
             navigate("/")
             setCurrentUser(response.user)
-            console.log(currentUser)
         } catch (error){
-            console.log(error.code)
+            console.log(error)
             setError(error.code)
         }
     }  

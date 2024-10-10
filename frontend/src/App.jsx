@@ -45,7 +45,7 @@ function App() {
       <Route path="/exhibits" element={<Exhibits/>} currentUser={currentUser}/>
       <Route path="/venue-rentals" element={<Rentals/>} />
       <Route path="/contact" element={<Contact/>} />
-      <Route path="/login" element={<SignIn/>} />
+      <Route path="/login" element={<SignIn setCurrentUser={setCurrentUser}/>} />
     </Routes>
     <Footer currentUser={currentUser} setCurrentUser={setCurrentUser}/>
     </>
