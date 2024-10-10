@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
 export default function Events(){
     return (
@@ -7,6 +8,7 @@ export default function Events(){
             <Navbar />
             <Header />
             <h1>Events</h1>
+            <Footer />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
 export default function About(){
     return (
@@ -16,6 +17,7 @@ export default function About(){
             <h4>Hours of Operation: Open Seasonally, May - October, Wednesday - Sunday, 10am - 4pm</h4>
             <h4>Location: South West Bridgetower at Michigan Ave. & Wacker Dr. - 99 Chicago Riverwalk, Chicago, IL 60601</h4>
             <h4>Phone: (312) 977-0227</h4>
+            <Footer />
         </div>
     )
 }

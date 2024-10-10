@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
 export default function Contact(){
     return (
@@ -7,6 +8,7 @@ export default function Contact(){
             <Navbar />
             <Header />
             <h1>Contact Us:</h1>
+            <Footer />
         </div>
     )
 }

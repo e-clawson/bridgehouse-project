@@ -170,7 +170,7 @@ export default function Exhibits() {
             </div>
             <div>
               <label for="image"> Image</label>
-              <input value={input} id="image" onChange={handleChange}/>
+              <input type="file" value={input} id="image" onChange={handleChange}/>
             </div>
             <div>
               <label for="image-caption">Image Caption</label>

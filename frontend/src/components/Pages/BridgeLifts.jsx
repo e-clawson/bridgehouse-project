@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
 export default function BridgeLifts(){
     return (
@@ -22,6 +23,7 @@ export default function BridgeLifts(){
 
             <h4>Check out Our info on the DuSable Bridge/Chicago Bridges: </h4>
             {/* eventually I will put a filtered map of exhibits here to get just the bridge exhibits to show up */}
+            <Footer />
         </div>
     )
 }
