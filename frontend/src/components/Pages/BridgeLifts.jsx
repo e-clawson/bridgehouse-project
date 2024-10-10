@@ -5,8 +5,7 @@ import Footer from "../Footer/Footer"
 export default function BridgeLifts(){
     return (
          <div className="bridge-lifts">
-            <Navbar />
-            <Header />
+           
             <h1>Bridge Lifts</h1>
             {/* evenutally I will add either a slideshow or the video of the bridge here */}
             <h3>It is quite a scene when Michigan Avenue meets the sky.</h3>
@@ -23,7 +22,7 @@ export default function BridgeLifts(){
 
             <h4>Check out Our info on the DuSable Bridge/Chicago Bridges: </h4>
             {/* eventually I will put a filtered map of exhibits here to get just the bridge exhibits to show up */}
-            <Footer />
+            
         </div>
     )
 }

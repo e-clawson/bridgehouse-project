@@ -5,8 +5,7 @@ import Footer from "../Footer/Footer"
 export default function About(){
     return (
          <div className="bridge-lifts">
-            <Navbar />
-            <Header />
+            
             <h1>About</h1>
             <p>The McCormick Bridgehouse & Chicago River Museum celebrates the Chicago River and its world-famous movable bridges.</p>
             <p>Beginning at river level and spiraling five stories up, the McCormick Bridgehouse & Chicago River Museum provides a one-of-a-kind opportunity to explore a historic landmark bridgehouse.</p>
@@ -17,7 +16,7 @@ export default function About(){
             <h4>Hours of Operation: Open Seasonally, May - October, Wednesday - Sunday, 10am - 4pm</h4>
             <h4>Location: South West Bridgetower at Michigan Ave. & Wacker Dr. - 99 Chicago Riverwalk, Chicago, IL 60601</h4>
             <h4>Phone: (312) 977-0227</h4>
-            <Footer />
+
         </div>
     )
 }

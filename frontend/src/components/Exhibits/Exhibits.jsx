@@ -112,8 +112,6 @@ export default function Exhibits() {
 
   return (
     <>
-      <Navbar />
-      <Header />
       <div className='filter-search'>
         <Filter />
         <Search />

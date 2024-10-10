@@ -15,53 +15,41 @@ import Home from './components/Pages/Home'
 import BridgeLifts from './components/Pages/BridgeLifts'
 import Rentals from './components/Pages/Rentals'
 import Contact from './components/Pages/Contact'
+import Footer from './components/Footer/Footer'
 
 export const BASE_URL = 'http://localhost:8000'
 
 function App() {
-  const [userAuth, setUserAuth] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
   const [isAuthReady, setIsAuthReady] = useState(false)
 
   useEffect (() => {
     let unsub = auth.onAuthStateChanged((user) => {
-      console.log("authentication", user.uid)
-      setUserAuth(user)
+      console.log("authentication", user)
+      setCurrentUser(user)
       setIsAuthReady(true)
       unsub()
+      console.log(currentUser)
     })
   }, [])
 
   return (
     <>
+    <Navbar />
+    <Header />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />}/>
       <Route path="/about" element={<About/>} />
       <Route path="/events" element={<Events/>} />
       <Route path="/bridgelifts" element={<BridgeLifts/>} />
-      <Route path="/exhibits" element={<Exhibits/>} />
+      <Route path="/exhibits" element={<Exhibits/>} currentUser={currentUser}/>
       <Route path="/venue-rentals" element={<Rentals/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/login" element={<SignIn/>} />
     </Routes>
+    <Footer currentUser={currentUser} setCurrentUser={setCurrentUser}/>
     </>
   )
 }
 
 export default App
-  // <Navbar />
-  //   <Header />
-  //   <SignUp />
-  //   <SignIn />
-  //     <h1>Bridgehouse Project</h1>
-  //   <Exhibits />
-
-   {/* { isAuthReady && <BrowserRouter>
-      <Navbar userAuth={userAuth} setUserAuth={setUserAuth}/>
-      <div className="routes-container"> 
-        <Routes>
-          <Route path="/" element={userAuth? <Exhibits />:<Navigate replace={true} to="/login" />} />
-
-        </Routes>
-
-      </div>
-    </BrowserRouter>} */}

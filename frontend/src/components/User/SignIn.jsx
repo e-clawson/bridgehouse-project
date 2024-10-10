@@ -4,7 +4,7 @@ import {auth} from "../../config"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from "react-router-dom"
 
-export default function SignIn({setUserAuth}){
+export default function SignIn({currentUser, setCurrentUser}){
     const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
@@ -21,8 +21,8 @@ export default function SignIn({setUserAuth}){
             let response = await signInWithEmailAndPassword(auth, email, password)
             console.log(response.user)
             navigate("/")
-            setUserAuth(response.user)
-            console.log(userAuth)
+            setCurrentUser(response.user)
+            console.log(currentUser)
         } catch (error){
             console.log(error.code)
             setError(error.code)

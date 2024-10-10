@@ -5,10 +5,9 @@ import Footer from "../Footer/Footer"
 export default function Contact(){
     return (
          <div className="contact">
-            <Navbar />
-            <Header />
+           
             <h1>Contact Us:</h1>
-            <Footer />
+         
         </div>
     )
 }

@@ -5,10 +5,9 @@ import Footer from "../Footer/Footer"
 export default function Rentals(){
     return (
          <div className="rentals">
-            <Navbar />
-            <Header />
+            
             <h1>Rentals</h1>
-            <Footer />
+           
         </div>
     )
 }
