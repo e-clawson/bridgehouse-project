@@ -22,6 +22,7 @@ export default function SignIn({setUserAuth}){
             console.log(response.user)
             navigate("/")
             setUserAuth(response.user)
+            console.log(userAuth)
         } catch (error){
             console.log(error.code)
             setError(error.code)
@@ -44,9 +45,9 @@ export default function SignIn({setUserAuth}){
                     <button>Log In</button>
                 </div>
                 <div>
-                    {loading && <h5>Loading...</h5>}
+                    {/* {loading && <h5>Loading...</h5>}
                     {success && <h5 style={{color: "green"}}>Login Successful</h5>}
-                    {error && <h5 style={{color: "red"}}>{error}</h5>}
+                    {error && <h5 style={{color: "red"}}>{error}</h5>} */}
                 </div>
             </form>
         </div>
