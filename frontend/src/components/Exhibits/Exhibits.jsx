@@ -41,7 +41,9 @@ export default function Exhibits({currentUser}) {
 
   //allows you to change the input text 
   function handleChange(e){ 
-    setInput(e.target.value)
+    setFormData({
+      [e.target.name]: e.target.value,
+    })
   }
 
   //handles the button click of the form 
@@ -50,7 +52,16 @@ export default function Exhibits({currentUser}) {
     e.preventDefault()
     // format our data - this should match the schema
     const exhibit = {
-      title: input
+      title: input, 
+      subtitle: input, 
+      floor: input, 
+      dateNum: input, 
+      dateString: input, 
+      image: input,
+      imgCaption: input,
+      pageContent: input, 
+      additionalResources: input, 
+      tags: input, 
     }
     //make the POST request - create a new exhibit display
     const response = await fetch(`${BASE_URL}/exhibits`, {
@@ -154,43 +165,43 @@ export default function Exhibits({currentUser}) {
             <h3>Add A Topic:</h3>
               <div>
                 <label for="title">Title</label>
-                <input value={input} id="fname" onChange={handleChange}/>
+                <input value={input} name="title" id="title" onChange={handleChange}/>
               </div>
               <div>
                 <label for="sub-title">Sub-Title</label>
-                <input value={input} id="sub-title" onChange={handleChange}/>
+                <input value={input} name="sub-title" id="sub-title" onChange={handleChange}/>
               </div>
               <div>
                 <label for="floor">Museum Floor</label>
-                <input value={input} id="floor" onChange={handleChange}/>
+                <input value={input} name="floor" id="floor" onChange={handleChange}/>
               </div>
               <div>
                 <label for="date-num">Date (number only)</label>
-                <input value={input} id="date-num" onChange={handleChange}/>
+                <input value={input} name="date-num" id="date-num" onChange={handleChange}/>
               </div>
               <div>
                 <label for="date"> date (text and numbers)</label>
-                <input value={input} id="date" onChange={handleChange}/>
+                <input value={input} name="date" id="date" onChange={handleChange}/>
               </div>
               <div>
                 <label for="image"> Image</label>
-                <input type="file" value={input} id="image" onChange={handleChange}/>
+                <input type="file" value={input} name="image" id="image" onChange={handleChange}/>
               </div>
               <div>
                 <label for="image-caption">Image Caption</label>
-                <input value={input} id="image-caption" onChange={handleChange}/>
+                <input value={input} name="image-caption" id="image-caption" onChange={handleChange}/>
               </div>
               <div>
                 <label for="page-content">Page Content</label>
-                <input value={input} id="page-content" onChange={handleChange}/>
+                <input value={input} name="page-content" id="page-content" onChange={handleChange}/>
               </div>
               <div>
                 <label for="additional-resources">Additional Resources (links, citations)</label>
-                <input value={input} id="additional-resources" onChange={handleChange}/>
+                <input value={input} name="additional-resources" id="additional-resources" onChange={handleChange}/>
               </div>
               <div>
                 <label for="tags">Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
-                <input value={input} id="tags" onChange={handleChange}/>
+                <input value={input} name="tags" id="tags" onChange={handleChange}/>
               </div>
             </div>
           <button>Add</button>
