@@ -40,6 +40,7 @@ Backend:
      - my repo of class notes on how to setup a fullstack MERN application 
      - mongose db documentation - https://mongoosejs.com/ 
      - Reqbin - what I used to test all my routes - https://reqbin.com/ 
+     - helpful tutorial refresher on forms in react - https://www.freecodecamp.org/news/how-to-build-forms-in-react/ 
 
 # acknowledgements 
 
