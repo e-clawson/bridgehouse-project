@@ -41,9 +41,8 @@ export default function Exhibits({currentUser}) {
 
   //allows you to change the input text 
   function handleChange(e){ 
-    setFormData({
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target;
+    setFormData((formData) => ({...formData, [name]: value}))
   }
 
   //handles the button click of the form 
@@ -52,8 +51,8 @@ export default function Exhibits({currentUser}) {
     e.preventDefault()
     // format our data - this should match the schema
     const exhibit = {
-      title: input, 
-      subtitle: input, 
+      title: formData.title, 
+      subtitle: formData.subtitle, 
       floor: input, 
       dateNum: input, 
       dateString: input, 
@@ -164,44 +163,44 @@ export default function Exhibits({currentUser}) {
           <div>
             <h3>Add A Topic:</h3>
               <div>
-                <label for="title">Title</label>
-                <input value={input} name="title" id="title" onChange={handleChange}/>
+                <label >Title</label>
+                <input value={formData.title} name="title" id="title" onChange={handleChange}/>
               </div>
               <div>
-                <label for="sub-title">Sub-Title</label>
-                <input value={input} name="sub-title" id="sub-title" onChange={handleChange}/>
+                <label >Sub-Title</label>
+                <input value={formData.subtitle} name="subtitle" id="subtitle" onChange={handleChange}/>
               </div>
               <div>
-                <label for="floor">Museum Floor</label>
-                <input value={input} name="floor" id="floor" onChange={handleChange}/>
+                <label >Museum Floor</label>
+                <input value={formData.floor} name="floor" id="floor" onChange={handleChange}/>
               </div>
               <div>
-                <label for="date-num">Date (number only)</label>
-                <input value={input} name="date-num" id="date-num" onChange={handleChange}/>
+                <label >Date (number only)</label>
+                <input value={formData.dateNum} name="dateNum" id="dateNum" onChange={handleChange}/>
               </div>
               <div>
-                <label for="date"> date (text and numbers)</label>
-                <input value={input} name="date" id="date" onChange={handleChange}/>
+                <label > date (text and numbers)</label>
+                <input value={formData.dateString} name="dateString" id="dateString" onChange={handleChange}/>
               </div>
               <div>
-                <label for="image"> Image</label>
-                <input type="file" value={input} name="image" id="image" onChange={handleChange}/>
+                <label > Image</label>
+                <input type="file" value={formData.image} name="image" id="image" onChange={handleChange}/>
               </div>
               <div>
-                <label for="image-caption">Image Caption</label>
-                <input value={input} name="image-caption" id="image-caption" onChange={handleChange}/>
+                <label >Image Caption</label>
+                <input value={formData.imgCaption} name="imgCaption" id="imgCaption" onChange={handleChange}/>
               </div>
               <div>
-                <label for="page-content">Page Content</label>
-                <input value={input} name="page-content" id="page-content" onChange={handleChange}/>
+                <label >Page Content</label>
+                <input value={formData.pageContent} name="pageContent" id="pageContent" onChange={handleChange}/>
               </div>
               <div>
-                <label for="additional-resources">Additional Resources (links, citations)</label>
-                <input value={input} name="additional-resources" id="additional-resources" onChange={handleChange}/>
+                <label >Additional Resources (links, citations)</label>
+                <input value={formData.additionalResources} name="additionalResources" id="additionalResources" onChange={handleChange}/>
               </div>
               <div>
-                <label for="tags">Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
-                <input value={input} name="tags" id="tags" onChange={handleChange}/>
+                <label >Tags (Please use: Science, Nature, History, Public Works/Health, Bridges)</label>
+                <input value={formData.tags} name="tags" id="tags" onChange={handleChange}/>
               </div>
             </div>
           <button>Add</button>
