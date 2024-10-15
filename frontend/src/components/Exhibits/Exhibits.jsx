@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Link, useParams } from "react-router-dom"
 import "./exhibits.css"
 import Search from '../Search'
 import Filter from "./Filter"
 
 export const BASE_URL = 'http://localhost:8000'
 
-export default function Exhibits({currentUser}) {
+export default function Exhibits({currentUser, exhibits, setExhibits}) {
   //track and update the state of exhibits
-  const [exhibits, setExhibits] = useState([])
+  // const [exhibits, setExhibits] = useState([])
   //track and update the state of the input box
+  let {exhibitId} = useParams();
   const [input, setInput] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [editId, setEditId] = useState(null);
@@ -29,16 +31,16 @@ export default function Exhibits({currentUser}) {
   })
 
   //GET - gets all the exhibits from the database 
-  useEffect(() => {
-    async function test() {
-      const response = await fetch(`${BASE_URL}/exhibits`)
-      const data = await response.json()
-      console.log(data)
-      setExhibits(data)
-      console.log(exhibits)
-    }
-    test()
-  }, [])
+  // useEffect(() => {
+  //   async function test() {
+  //     const response = await fetch(`${BASE_URL}/exhibits`)
+  //     const data = await response.json()
+  //     console.log(data)
+  //     setExhibits(data)
+  //     console.log(exhibits)
+  //   }
+  //   test()
+  // }, [])
 
   function checkboxHandler(e){
     let isSelected = e.target.checked
@@ -159,9 +161,9 @@ export default function Exhibits({currentUser}) {
                  <img src={exhibit.image}></img>
                  <p>{exhibit.imgCaption}</p>
                  <p>{exhibit.pageContent}</p>
-                 <Link></Link>
                  <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
                  <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
+                 <Link to={`/exhibits/${exhibit._id}`}>Read More</Link>
                </>
              )}
             </div> : 
@@ -171,7 +173,7 @@ export default function Exhibits({currentUser}) {
               <img src={exhibit.image}></img>
               <p>{exhibit.imgCaption}</p>
               <p>{exhibit.pageContent}</p>
-             <Link></Link>
+              <Link to={`/exhibits/${exhibit._id}`}>Read More</Link>
             </div>}
             
           </div>

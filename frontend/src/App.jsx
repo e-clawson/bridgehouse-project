@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
+import {BrowserRouter, Routes, Route, useParams, Navigate} from "react-router-dom"
 
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar'
@@ -14,12 +14,15 @@ import BridgeLifts from './components/Pages/BridgeLifts'
 import Rentals from './components/Pages/Rentals'
 import Contact from './components/Pages/Contact'
 import Footer from './components/Footer/Footer'
+import ExhibitPages from './components/Exhibits/ExhibitPages'
 
 export const BASE_URL = 'http://localhost:8000'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [isAuthReady, setIsAuthReady] = useState(false)
+  const [exhibits, setExhibits] = useState([])
+  let {exhibitId} = useParams();
 
   useEffect (() => {
     let unsub = auth.onAuthStateChanged((user) => {
@@ -31,6 +34,17 @@ function App() {
     })
   }, [])
 
+  useEffect(() => {
+    async function test() {
+      const response = await fetch(`${BASE_URL}/exhibits`)
+      const data = await response.json()
+      console.log(data)
+      setExhibits(data)
+      console.log(exhibits)
+    }
+    test()
+  }, [])
+
   return (
     <>
     <Navbar />
@@ -40,7 +54,8 @@ function App() {
       <Route path="/about" element={<About/>} />
       <Route path="/events" element={<Events/>} />
       <Route path="/bridgelifts" element={<BridgeLifts/>} />
-      <Route path="/exhibits" element={<Exhibits currentUser={currentUser}/>} />
+      <Route path="/exhibits" element={<Exhibits currentUser={currentUser} exhibits={exhibits}/>} />
+      <Route path="exhibits/:exhibitId" element={<ExhibitPages exhibitId={exhibitId} currentUser={currentUser} exhibits={exhibits}/>}/>
       <Route path="/venue-rentals" element={<Rentals/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/login" element={<SignIn setCurrentUser={setCurrentUser} />}/>
