@@ -29,6 +29,13 @@ export default function ExhibitPages({currentUser, exhibits, exhibitId}){
             <p>{exhibitDisplay.imgCaption}</p>
             <p>{exhibitDisplay.pageContent}</p>
             <p><a>{exhibitDisplay.additionalResoucres}</a></p>
+            { currentUser !== null ? 
+            <div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div> :
+            <div></div>            
+            }
         </div>
     )
 }
