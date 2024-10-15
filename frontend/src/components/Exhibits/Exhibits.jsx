@@ -44,7 +44,6 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
 }
 
 
-
       {/* <h2>Exhibits:</h2>
       <div className="exhibit-display">
         {exhibits.map(exhibit => 

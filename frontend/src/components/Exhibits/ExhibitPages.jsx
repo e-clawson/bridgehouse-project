@@ -7,6 +7,8 @@ import ExhibitForm from './ExhibitForm'
 export const BASE_URL = 'http://localhost:8000'
 
 export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibitId}){
+    const [isEditing, setIsEditing] = useState(false)
+
     let id = useParams()
     const [exhibitDisplay, setExhibitDisplay] = useState({})
    console.log(id.exhibitId)
@@ -21,6 +23,10 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
         test()
       }, [])
 
+    const addEditForm = () => {
+        setIsEditing(true)
+    }
+
     return(
         <div className="exhibit-page" id={id.exhibitId}>
             <h2>{exhibitDisplay.title}</h2> 
@@ -33,10 +39,22 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
             { currentUser !== null ? 
             <div>
                 <DeleteExhibit id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
-                <ExhibitForm id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
+                {isEditing !== true? (<button onClick={addEditForm}>Edit</button>)
+                : (<ExhibitForm isEditing={isEditing} setIsEditing={setIsEditing}/>)}
             </div> :
             <div></div>            
             }
         </div>
     )
 }
+
+
+// /* <div className="form-display">
+// { currentUser !== null ? (<div> 
+//   <ExhibitForm />
+// </div>) : (
+//   <></>
+// )
+// }
+
+// <ExhibitForm id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
