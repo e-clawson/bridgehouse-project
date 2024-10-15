@@ -41,6 +41,9 @@ Backend:
      - mongose db documentation - https://mongoosejs.com/ 
      - Reqbin - what I used to test all my routes - https://reqbin.com/ 
      - helpful tutorial refresher on forms in react - https://www.freecodecamp.org/news/how-to-build-forms-in-react/ 
+     - google maps API react app walkthrough - https://developers.google.com/codelabs/maps-platform/maps-platform-101-react-js#0 
+     - react-google-maps documentation - https://visgl.github.io/react-google-maps/ 
+     - google maps cluster marking library - https://developers.google.com/maps/documentation/javascript/marker-clustering 
 
 # acknowledgements 
 

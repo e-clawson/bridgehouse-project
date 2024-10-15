@@ -28,6 +28,19 @@ app.get('/exhibits', async(req,res) => {
     }
 })
 
+//route to GET one exhibit document by id 
+app.get('/exhibits/:id', async(req,res) => {
+    try {
+        const exhibit = await ExhibitInfo.findById(req.params.id)
+        console.log('GET /exhibits/:id')
+        res.status(200).json(exhibit)
+    }catch(e) {
+        console.log(e)
+        res.status(400).json(e)
+        //getting to here now 
+    }
+})
+
 //route to POST - route that creates and adds an axhibit to the DB  
 app.post('/exhibits', async (req,res) =>{
     try { 

@@ -154,13 +154,12 @@ export default function Exhibits({currentUser}) {
                 </form>
              ) : (
                <>
-                 <p>{exhibit.title}</p> 
                  <h2>{exhibit.title}</h2> 
                  <h4>{exhibit.subtitle}</h4> 
                  <img src={exhibit.image}></img>
                  <p>{exhibit.imgCaption}</p>
                  <p>{exhibit.pageContent}</p>
-                 <p>{exhibit.additionalResources}</p>
+                 <Link></Link>
                  <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
                  <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
                </>
@@ -172,7 +171,7 @@ export default function Exhibits({currentUser}) {
               <img src={exhibit.image}></img>
               <p>{exhibit.imgCaption}</p>
               <p>{exhibit.pageContent}</p>
-              <p>{exhibit.additionalResources}</p>
+             <Link></Link>
             </div>}
             
           </div>

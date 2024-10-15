@@ -15,10 +15,14 @@ export default function Search(){
     }
     
     return (
-        <input
+    
+    <div>
+         <input
         type="text"
         placeholder="Search"
         onChange={handleChange}
         value={searchInput} />
+
+    </div>
     )
 }
