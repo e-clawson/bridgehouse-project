@@ -91,23 +91,6 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
     setInput("")
     //notreaching this setInput for some reason 
   }
-
-  //make the DELETE request - delete an exhibit by ID 
-  async function handleDelete(id) {
-    try{
-      const response = await fetch(`${BASE_URL}/exhibits/${id}`, {
-        method: "DELETE", 
-      })
-      if (!response.ok) {
-        throw new Error("something went wrong - status: " + response.status)
-      }
-      const newExhibits = exhibits.filter(exhibit => exhibit._id !== id)
-      setExhibits(newExhibits)
-    } catch(e) {
-      console.log("in the catch - something went wrong")
-      console.log(e)
-    }
-  }
   
   //make a PATCH request - edit the exhibit by ID 
   const handleEditClick = (id, text) => {

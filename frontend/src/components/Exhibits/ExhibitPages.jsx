@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
+import DeleteExhibit from './DeleteExhibit'
 
 export const BASE_URL = 'http://localhost:8000'
 
-export default function ExhibitPages({currentUser, exhibits, exhibitId}){
+export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibitId}){
     let id = useParams()
     const [exhibitDisplay, setExhibitDisplay] = useState({})
    console.log(id.exhibitId)
@@ -18,10 +19,9 @@ export default function ExhibitPages({currentUser, exhibits, exhibitId}){
         }
         test()
       }, [])
-      console.log(exhibitDisplay)
 
     return(
-        <div className="exhibit-page" id={exhibitDisplay._id}>
+        <div className="exhibit-page" id={id.exhibitId}>
             <h2>{exhibitDisplay.title}</h2> 
             <h4>{exhibitDisplay.subtitle}</h4> 
             <h5>{exhibitDisplay.dateString}</h5>
@@ -32,7 +32,7 @@ export default function ExhibitPages({currentUser, exhibits, exhibitId}){
             { currentUser !== null ? 
             <div>
                 <button>Edit</button>
-                <button>Delete</button>
+                <DeleteExhibit id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
             </div> :
             <div></div>            
             }
