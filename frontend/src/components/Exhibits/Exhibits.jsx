@@ -163,7 +163,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
                  <p>{exhibit.pageContent}</p>
                  <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
                  <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
-                 {/* <button onClick={}>Read More</button> */}
+                 <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
                </>
              )}
             </div> : 
@@ -173,7 +173,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
               <img src={exhibit.image}></img>
               <p>{exhibit.imgCaption}</p>
               <p>{exhibit.pageContent}</p>
-              <Link to={`/exhibits/${exhibit._id}`}>Read More</Link>
+              <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
             </div>}
             
           </div>
