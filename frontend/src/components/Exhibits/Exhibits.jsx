@@ -11,7 +11,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
   //track and update the state of exhibits
   // const [exhibits, setExhibits] = useState([])
   //track and update the state of the input box
-  let {exhibitId} = useParams();
+  // let {exhibitId} = useParams();
   const [input, setInput] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [editId, setEditId] = useState(null);
@@ -163,7 +163,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
                  <p>{exhibit.pageContent}</p>
                  <button onClick={() => handleDelete(exhibit._id)}>Delete</button>
                  <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
-                 <Link to={`/exhibits/${exhibit._id}`}>Read More</Link>
+                 {/* <button onClick={}>Read More</button> */}
                </>
              )}
             </div> : 

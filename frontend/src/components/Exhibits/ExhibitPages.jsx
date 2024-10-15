@@ -5,20 +5,20 @@ import {useParams} from 'react-router-dom'
 export const BASE_URL = 'http://localhost:8000'
 
 export default function ExhibitPages({currentUser, exhibits, exhibitId}){
- 
+    let id = useParams()
     const [exhibitDisplay, setExhibitDisplay] = useState({})
-    console.log(exhibitId)
+   console.log(id.exhibitId)
 
     useEffect(() => {
         async function test() {
-          const response = await fetch(`${BASE_URL}/exhibits/${exhibitId}`)
+          const response = await fetch(`${BASE_URL}/exhibits/${id.exhibitId}`)
           const data = await response.json()
           console.log(data) 
           setExhibitDisplay(data)
-          console.log(exhibitDisplay)
         }
         test()
       }, [])
+      console.log(exhibitDisplay)
 
     return(
         <div className="exhibit-page" id={exhibitDisplay._id}>
