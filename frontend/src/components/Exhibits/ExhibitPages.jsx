@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import DeleteExhibit from './DeleteExhibit'
+import ExhibitForm from './ExhibitForm'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -31,8 +32,8 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
             <p><a>{exhibitDisplay.additionalResoucres}</a></p>
             { currentUser !== null ? 
             <div>
-                <button>Edit</button>
                 <DeleteExhibit id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
+                <ExhibitForm />
             </div> :
             <div></div>            
             }
