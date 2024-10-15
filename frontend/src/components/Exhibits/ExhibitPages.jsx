@@ -33,7 +33,7 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
             { currentUser !== null ? 
             <div>
                 <DeleteExhibit id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
-                <ExhibitForm />
+                <ExhibitForm id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
             </div> :
             <div></div>            
             }
