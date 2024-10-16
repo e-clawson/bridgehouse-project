@@ -4,11 +4,12 @@
     background-size: cover;
     color: #ddd;
     height: 400px;
+    margin-bottom: 25px;
 }
 
 #header .wave {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
 }
 
 .wave{
