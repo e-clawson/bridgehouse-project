@@ -13,9 +13,11 @@
 
 .wave{
     background: url("../../assets/wave.png");
-    background-position: left top;
+    /* background-position: left top; */
     background-repeat: repeat-x;
-    height: 15px;
+    position: absolute;
+    top: 385px;
+    height: 20px;
     width: 100%;
 }
 

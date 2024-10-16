@@ -47,6 +47,8 @@ export default function ExhibitForm({isEditing, setIsEditing, id, exhibits, setE
       tags: formData.tags, 
     }
 
+    console.log(exhibit)
+
     //make the POST request - create a new exhibit display
     const response = await fetch(`${BASE_URL}/exhibits`, {
       method: 'POST',

@@ -4,6 +4,7 @@ import "./exhibits.css"
 import Search from '../Search'
 import Filter from "./Filter"
 import ExhibitForm from './ExhibitForm'
+import AddExhibit from './AddExhibit'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -33,7 +34,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
       </div>
       <div className="form-display">
         { currentUser !== null ? (<div> 
-          <ExhibitForm exhibits={exhibits} setExhibits={setExhibits}/>
+          <AddExhibit exhibits={exhibits} setExhibits={setExhibits}/>
         </div>) : (
           <></>
         )
