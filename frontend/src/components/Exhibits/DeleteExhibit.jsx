@@ -5,7 +5,6 @@ import {useNavigate} from 'react-router-dom'
 export const BASE_URL = 'http://localhost:8000'
 
 export default function DeleteExhibit({exhibits, setExhibits, exhibitId, id}){
-    console.log(exhibits)
     const navigate = useNavigate()
 
      //make the DELETE request - delete an exhibit by ID 

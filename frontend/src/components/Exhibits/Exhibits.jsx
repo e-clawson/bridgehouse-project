@@ -33,7 +33,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
       </div>
       <div className="form-display">
         { currentUser !== null ? (<div> 
-          <ExhibitForm />
+          <ExhibitForm exhibits={exhibits} setExhibits={setExhibits}/>
         </div>) : (
           <></>
         )
@@ -42,43 +42,3 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
     </div>
   )
 }
-
-
-      {/* <h2>Exhibits:</h2>
-      <div className="exhibit-display">
-        {exhibits.map(exhibit => 
-          <div key={exhibit._id} className='exhibit-card'>
-            { currentUser !== null ? <div>
-              {isEditing && editId === exhibit._id ? (
-                <form onSubmit={() => handleEditSubmit(exhibit._id)}>
-                <input
-                  type="text"
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}
-                />
-                <button type="submit">Update</button>
-                </form>
-             ) : (
-               <>
-                 <h2>{exhibit.title}</h2> 
-                 <h4>{exhibit.subtitle}</h4> 
-                 <img src={exhibit.image}></img>
-                 <p>{exhibit.imgCaption}</p>
-                 <p>{exhibit.pageContent}</p>
-                 <button onClick={() => handleEditClick(exhibit._id, exhibit.text)}>Edit</button>
-                 <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
-               </>
-             )}
-            </div> : 
-            <div key={exhibit._id} className='exhibit-card'>
-              <h2>{exhibit.title}</h2> 
-              <h4>{exhibit.subtitle}</h4> 
-              <img src={exhibit.image}></img>
-              <p>{exhibit.imgCaption}</p>
-              <p>{exhibit.pageContent}</p>
-              <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
-            </div>}
-            
-          </div>
-        )}
-      </div> */}

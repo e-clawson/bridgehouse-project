@@ -54,6 +54,7 @@ app.post('/exhibits', async (req,res) =>{
     }
 })
 
+//route to DELETE an exhibit by id
 app.delete("/exhibits/:id", async (req,res) => {
     try {
         const deletedExhibit= await ExhibitInfo.findByIdAndDelete(req.params.id)
@@ -66,6 +67,7 @@ app.delete("/exhibits/:id", async (req,res) => {
     }
 })
 
+//route to EDIT/UPDATE an exhibit by id 
 app.put('/exhibits/:id', async (req,res) => {
     try{
         const editedExhibit = await ExhibitInfo.findByIdAndUpdate(req.params.id, req.body, {new: true})

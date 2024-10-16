@@ -4,7 +4,7 @@ const exhibitSchema = mongoose.Schema({
    title: { type: String }, 
    subtitle: { type: String }, 
    floor: { type: Number, default: 0},
-   dateNum: { type: Number }, 
+   dateNum: { type: String }, 
    dateString: { type: String }, 
    image: { type: String }, 
    imgCaption: { type: String}, 
