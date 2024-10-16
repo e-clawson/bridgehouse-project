@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-export default function Search({}){
+export default function Search({exhibits, setExhibits}){
     const [searchInput, setSearchInput] = useState("");
     
 // I want to be able to search by something (title?) and if that 
@@ -21,7 +21,7 @@ export default function Search({}){
     return (
     
     <div>
-         <input
+        <input
         type="text"
         placeholder="Search"
         onChange={handleChange}

@@ -30,20 +30,19 @@ function App() {
       setCurrentUser(user)
       setIsAuthReady(true)
       unsub()
-      console.log(currentUser)
     })
   }, [])
+  console.log("currentUser", currentUser)
 
   useEffect(() => {
     async function test() {
       const response = await fetch(`${BASE_URL}/exhibits`)
       const data = await response.json()
-      console.log(data)
       setExhibits(data)
-      console.log(exhibits)
     }
     test()
   }, [])
+  console.log("initial load of exhibits", exhibits)
 
   return (
     <>
