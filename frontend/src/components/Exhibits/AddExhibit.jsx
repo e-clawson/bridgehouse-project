@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { useEffect } from 'react'
-import {useNavigate} from 'react-router-dom'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -19,12 +17,11 @@ export default function AddExhibit({exhibits, setExhibits}){
     })
   //allows you to change the input text 
   function handleChange(e){ 
-   
     const { name, value } = e.target;
     setFormData((formData) => ({...formData, [name]: value}))
   }
-  
-  async function handleSubmit({e, exhibits, setExhibits}){
+
+  async function handleSubmit(e){
     //keeps the page from refreshing
     e.preventDefault()
     // format our data - this should match the schema
@@ -52,7 +49,6 @@ export default function AddExhibit({exhibits, setExhibits}){
     const newExhibit = await response.json()
     setExhibits([...exhibits, newExhibit])
     console.log(newExhibit)
-    console.log(exhibits)
     //once everything is done, reset the form to empty
     setInput("")
     //notreaching this setInput for some reason 
@@ -60,69 +56,69 @@ export default function AddExhibit({exhibits, setExhibits}){
 
   return(
     <form id="exhibitForm" onSubmit={handleSubmit}>
-                <div>
-                  <h3>Add A Topic:</h3>
-                    <div>
-                      <label>Title
-                      <input value={formData.title} name="title" id="title" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label >Sub-Title
-                      <input value={formData.subtitle} name="subtitle" id="subtitle" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label >Museum Floor
-                      <select value={formData.floor} name="floor" id="floor" onChange={handleChange}>
-                        <option disabled value="">Select...</option>
-                        <option value="0" >0 </option>
-                        <option value="1">1 </option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 </option>
-                      </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label>Date (number only: mm-dd-yyyy)
-                      <input type="date" value={formData.dateNum} name="dateNum" id="dateNum" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label> Date in text and numbers (ex: "March 1, 1900")
-                      <input value={formData.dateString} name="dateString" id="dateString" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label> Image
-                      <input type="file" value={formData.image} name="image" id="image" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label>Image Caption
-                      <input value={formData.imgCaption} name="imgCaption" id="imgCaption" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label>Page Content
-                      <textarea value={formData.pageContent} name="pageContent" id="pageContent" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label>Additional Resources (links, citations)
-                      <input value={formData.additionalResources} name="additionalResources" id="additionalResources" onChange={handleChange}/>
-                      </label>
-                    </div>
-                    <div>
-                      <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, Public Health, Other )
-                      <input value={formData.tags} name="tags" id="tags" onChange={handleChange}/>
-                      </label>
-                    </div>
-                  </div>
-                <button>Add</button>
-              </form>
+        <div>
+            <h3>Add A Topic:</h3>
+            <div>
+                <label>Title
+                <input value={formData.title} name="title" id="title" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label >Sub-Title
+                <input value={formData.subtitle} name="subtitle" id="subtitle" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label >Museum Floor
+                <select value={formData.floor} name="floor" id="floor" onChange={handleChange}>
+                    <option disabled value="" >Select...</option>
+                    <option value={0}>0 </option>
+                    <option value={1}>1 </option>
+                    <option value={2}>2 </option>
+                    <option value={3}>3 </option>
+                    <option value={4}>4 </option>
+                    <option value={5}>5 </option>
+                </select>
+                </label>
+            </div>
+            <div>
+                <label>Date (number only: mm-dd-yyyy)
+                <input type="date" value={formData.dateNum} name="dateNum" id="dateNum" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label> Date in text and numbers (ex: "March 1, 1900")
+                <input value={formData.dateString} name="dateString" id="dateString" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label> Image
+                <input type="file" value={formData.image} name="image" id="image" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label>Image Caption
+                <input value={formData.imgCaption} name="imgCaption" id="imgCaption" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label>Page Content
+                <textarea value={formData.pageContent} name="pageContent" id="pageContent" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label>Additional Resources (links, citations)
+                <input value={formData.additionalResources} name="additionalResources" id="additionalResources" onChange={handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, Public Health, Other )
+                <input value={formData.tags} name="tags" id="tags" onChange={handleChange}/>
+                </label>
+            </div>
+        </div>
+        <button>Add</button>
+    </form>
     
   )
 
