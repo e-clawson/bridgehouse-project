@@ -11,9 +11,13 @@ export const BASE_URL = 'http://localhost:8000'
 export default function Exhibits({currentUser, exhibits, setExhibits}) {
   const [searchInput, setSearchInput] = useState("");
   const [currentTag, setCurrentTag] = useState("All");
+  const [isSearching, setIsSearching] = useState(false)
 
   //filter stuff
     const handleButtons = (e) => {
+        if (isSearching !== false){
+          setIsSearching(false)
+        }
         //takes the value string and stores in in the variable word
         let word = e.target.textContent
         //setsCurrentExhibit with the word 
@@ -36,6 +40,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
 
 //search stuff 
     const handleSearchText = (e) => {
+      setIsSearching(true)
       e.preventDefault()
       let search = e.target.value
       // let searchRight = search.toLowerCase()
@@ -83,6 +88,8 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
       mapped itemtem s matching the search */}
       <h2>Exhibits:</h2>
       <div className='exhibit-display'>
+        {isSearching === true? 
+        <>
         {searchResult.map(exhibit =>
         <div className='exhibit-card' key={exhibit._id}>
           <h2>{exhibit.title}</h2> 
@@ -94,6 +101,19 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
           <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
         </div>
         )}
+        </>
+        : <>{filtered.map(exhibit =>
+          <div className='exhibit-card' key={exhibit._id}>
+            <h2>{exhibit.title}</h2> 
+            <h4>{exhibit.subtitle}</h4> 
+            <img src={exhibit.image}></img>
+            <p>{exhibit.imgCaption}</p>
+            {/* need to add styling to limit the number of lines that display */}
+            {/* <p className="page-content">{exhibit.pageContent}</p> */}
+            <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
+          </div>
+          )}
+          </>}
       </div>
       <div className="form-display">
         { currentUser !== null ? (<div> 
