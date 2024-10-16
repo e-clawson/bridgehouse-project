@@ -8,7 +8,9 @@ export default function Filter(){
                 <div className="filter-btn">Bridges and Engineering</div>
                 <div className="filter-btn">History</div>
                 <div className="filter-btn">Nature</div>
+                <div className="filter-btn">People</div>
                 <div className="filter-btn">Public Health</div>
+                <div className="filter-btn">River</div>
             </div>
         </div>
     )

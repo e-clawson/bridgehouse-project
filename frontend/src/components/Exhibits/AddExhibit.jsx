@@ -50,8 +50,8 @@ export default function AddExhibit({exhibits, setExhibits}){
     setExhibits([...exhibits, newExhibit])
     console.log(newExhibit)
     //once everything is done, reset the form to empty
-    setInput("")
-    //notreaching this setInput for some reason 
+    setFormData("")
+    //notreaching this setFormData for some reason 
   }
 
   return(
@@ -112,7 +112,7 @@ export default function AddExhibit({exhibits, setExhibits}){
                 </label>
             </div>
             <div>
-                <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, Public Health, Other )
+                <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, People, Public Health, River, Other )
                 <input value={formData.tags} name="tags" id="tags" onChange={handleChange}/>
                 </label>
             </div>
