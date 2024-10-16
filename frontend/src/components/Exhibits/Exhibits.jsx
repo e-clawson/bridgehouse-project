@@ -13,8 +13,8 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
   return (
     <div>
       <div className='filter-search'>
-        <Filter />
-        <Search />
+        <Filter exhibits={exhibits} setExhibits={setExhibits}/>
+        <Search exhibits={exhibits} setExhibits={setExhibits}/>
       </div>
       {/* made the searchbar component but need to get it to display just the
       mapped items matching the search */}

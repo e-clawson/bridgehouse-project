@@ -1,9 +1,13 @@
 import React from "react"
 import { useState } from "react"
 
-export default function Search(){
+export default function Search({}){
     const [searchInput, setSearchInput] = useState("");
     
+// I want to be able to search by something (title?) and if that 
+//exhibit card contains any part of that title, to return that card only 
+//this means I will need to pass exhibits a different array to display 
+
     const handleChange = (e) => {
         e.preventDefault();
         setSearchInput(e.target.value);
