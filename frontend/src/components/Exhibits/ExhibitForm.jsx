@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { useEffect } from 'react'
-import {useNavigate} from 'react-router-dom'
 
 export const BASE_URL = 'http://localhost:8000'
 
@@ -21,18 +19,14 @@ export default function ExhibitForm({id, exhibits, setExhibits, exhibitDisplay, 
     // function handleEditChange(e){ 
     //    setInputData(e.target.value)
     // }
-    
-    function handleEditChange(e){ 
-        setInputData(e.target.value)
-     }
 
-    // function handleEditChange(e){ 
-    //     const { name, value } = e.target;
-    //     setFormData((formData) => ({...formData, [name]: value}))
-    //   }
+    function handleEditChange(e){ 
+        const { name, value } = e.target;
+        setFormData((formData) => ({...formData, [name]: value}))
+      }
 
     //make a PATCH request - edit the exhibit by ID 
-      async function handleEditSubmit(e) {
+      async function handleEditSubmit({e, id}) {
         e.preventDefault()
         // const exhibit = exhibits.find((exhibit) => exhibit._id == id);
         
@@ -51,13 +45,15 @@ export default function ExhibitForm({id, exhibits, setExhibits, exhibitDisplay, 
 
         const response = await fetch(`${BASE_URL}/exhibits/${id}`, {
           method: "PUT", 
+          body: JSON.stringify(exhibit),
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(exhibit)
+          
         })
         const updatedExhibit = await response.json();
         const updatedExhibits = exhibits.map((exhibit) => (exhibit._id === updatedExhibit._id ? updatedExhibit : exhibit));
     
         setExhibits(updatedExhibits)
+        setFormData("")
     }
 
 

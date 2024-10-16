@@ -26,13 +26,13 @@ function App() {
 
   useEffect (() => {
     let unsub = auth.onAuthStateChanged((user) => {
-      console.log("authentication", user)
+      // console.log("authentication", user)
       setCurrentUser(user)
       setIsAuthReady(true)
       unsub()
     })
   }, [])
-  console.log("currentUser", currentUser)
+  // console.log("currentUser", currentUser)
 
   useEffect(() => {
     async function test() {
@@ -42,7 +42,7 @@ function App() {
     }
     test()
   }, [])
-  console.log("initial load of exhibits", exhibits)
+  // console.log("initial load of exhibits", exhibits)
 
   return (
     <>
