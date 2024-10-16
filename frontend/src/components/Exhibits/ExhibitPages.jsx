@@ -36,8 +36,6 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
         }
         test()
       }, [])
-
-    console.log(exhibitDisplay)
     
     //edit form things:
 
@@ -57,20 +55,20 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
     }
 
     //make a PATCH request - edit the exhibit by ID 
-    async function handleEditSubmit(newExhibitId) {
+    async function handleEditSubmit(e) {
         e.preventDefault()
         
         const exhibit = {
-            title: formData.title, 
-            subtitle: formData.subtitle, 
-            floor: formData.floor, 
-            dateNum: formData.dateNum, 
-            dateString: formData.dateString, 
-            image: formData.image,
-            imgCaption: formData.imgCaption,
-            pageContent: formData.pageContent, 
-            additionalResources: formData.additionalResources, 
-            tags: formData.tags, 
+            title: inputData.title, 
+            subtitle: inputData.subtitle, 
+            floor: inputData.floor, 
+            dateNum: inputData.dateNum, 
+            dateString: inputData.dateString, 
+            image: inputData.image,
+            imgCaption: inputData.imgCaption,
+            pageContent: inputData.pageContent, 
+            additionalResources: inputData.additionalResources, 
+            tags: inputData.tags, 
           }
 
         const response = await fetch(`${BASE_URL}/exhibits/${newExhibitId}`, {
@@ -80,10 +78,10 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
           
         })
         const updatedExhibit = await response.json();
-        const updatedExhibits = exhibits.map((exhibit) => (exhibit._id === updatedExhibit._id ? updatedExhibit : exhibit));
-    
-        setExhibits(updatedExhibits)
-        setFormData("")
+        // const updatedExhibits = exhibits.map((exhibit) => (exhibit._id === updatedExhibit._id ? updatedExhibit : exhibit));
+        // setExhibits(updatedExhibits)
+        setExhibitDisplay(updatedExhibit)
+        setIsEditing(false)
     }
 
     return(
@@ -102,8 +100,8 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
                 : 
                 <>
                 <div>
-                <form id="exhibitForm" >
-                <div className="editform" onSubmit={handleEditSubmit}>
+                <form id="exhibitForm" onSubmit={handleEditSubmit}>
+                <div className="editform">
                   <h3>Edit: </h3>
                     <div>
                       <label>Title
