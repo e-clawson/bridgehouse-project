@@ -43,16 +43,17 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
       setIsSearching(true)
       e.preventDefault()
       let search = e.target.value
-      // let searchRight = search.toLowerCase()
+      let searchRight = search.toLowerCase()
+      console.log(searchRight)
       // setSearchInput(searchRight);
-      setSearchInput(search)
+      setSearchInput(searchRight)
     }
 
     //works but is case sensitive 
     function handleSearch(){
       if (searchInput.length > 0) {
         const searched = exhibits.filter((exhibit) => {
-          return exhibit.title === searchInput|| exhibit.title?.includes(searchInput)
+          return exhibit.title.toLowerCase() === searchInput|| exhibit.title.toLowerCase()?.includes(searchInput)
         })
         return searched
       } else {

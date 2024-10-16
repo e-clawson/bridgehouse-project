@@ -2,11 +2,10 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import DeleteExhibit from './DeleteExhibit'
-import ExhibitForm from './ExhibitForm'
 
 export const BASE_URL = 'http://localhost:8000'
 
-export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibitId}){
+export default function ExhibitPages({currentUser, exhibits, setExhibits}){
     const [isEditing, setIsEditing] = useState(false)
     let id = useParams()
     const newExhibitId = id.exhibitId
@@ -23,10 +22,7 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
       additionalResources: "", 
       tags: "", 
     })
-    const [formData, setFormData] = useState({exhibitDisplay})
     
-    
-   
     // sets the page with data for the specific exhibit by id 
     useEffect(() => {
         async function test() {
@@ -172,14 +168,3 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
         </div>
     )
 }
-
-
-// /* <div className="form-display">
-// { currentUser !== null ? (<div> 
-//   <ExhibitForm />
-// </div>) : (
-//   <></>
-// )
-// }
-
-// <ExhibitForm id={id.exhibitId} exhibits={exhibits} setExhibits={setExhibits}/>
