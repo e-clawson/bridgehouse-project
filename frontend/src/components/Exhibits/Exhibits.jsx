@@ -9,18 +9,16 @@ import AddExhibit from './AddExhibit'
 export const BASE_URL = 'http://localhost:8000'
 
 export default function Exhibits({currentUser, exhibits, setExhibits}) {
-//move everything from filter here to get it to work - move the buttons to here 
+  const [searchInput, setSearchInput] = useState("");
+  const [currentTag, setCurrentTag] = useState("All");
 
-const [currentTag, setCurrentTag] = useState("All");
-
+  //filter stuff
     const handleButtons = (e) => {
         //takes the value string and stores in in the variable word
         let word = e.target.textContent
-        console.log(word)
         //setsCurrentExhibit with the word 
         setCurrentTag(word);
     }
-    console.log(currentTag)
 
     function handleFilter(){
       if (currentTag === "All") {
@@ -36,37 +34,63 @@ const [currentTag, setCurrentTag] = useState("All");
     }
     const filtered = handleFilter()
 
+//search stuff 
+    const handleSearchText = (e) => {
+      e.preventDefault()
+      let search = e.target.value
+      // let searchRight = search.toLowerCase()
+      // setSearchInput(searchRight);
+      setSearchInput(search)
+    }
+
+    //works but is case sensitive 
+    function handleSearch(){
+      if (searchInput.length > 0) {
+        const searched = exhibits.filter((exhibit) => {
+          return exhibit.title === searchInput|| exhibit.title?.includes(searchInput)
+        })
+        return searched
+      } else {
+      return exhibits
+    }
+  }
+    const searchResult = handleSearch()
+    console.log(searchResult)
+
   return (
     <div>
       <div className='filter-search'>
       <div className="filter-box">
             <h3 className="filter-title">Select A Topic or Search:</h3>
             <div className="filter-btn-box">
-                <div className="filter-btn" type="button" value="All" onClick={handleButtons}>All</div>
-                <div className="filter-btn" type="button" value="Architecture" onClick={handleButtons}>Architecture</div>
-                <div className="filter-btn" type="button" value="Bridges and Engineering" onClick={handleButtons}>Bridges and Engineering</div>
-                <div className="filter-btn" type="button" value="History" onClick={handleButtons}>History</div>
-                <div className="filter-btn" type="button" value="Nature" onClick={handleButtons}>Nature</div>
-                <div className="filter-btn" type="button" value="People" onClick={handleButtons}>People</div>
-                <div className="filter-btn" type="button" value="Public Health" onClick={handleButtons}>Public Health</div>
-                <div className="filter-btn" type="button" value="River" onClick={handleButtons}>River</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>All</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>Architecture</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>Bridges and Engineering</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>History</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>Nature</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>People</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>Public Health</div>
+                <div className="filter-btn" type="button" onClick={handleButtons}>River</div>
             </div>
         </div>
-        {/* <Filter exhibits={exhibits} setExhibits={setExhibits}/>
-        <Search exhibits={exhibits} setExhibits={setExhibits}/> */}
+        <div className='search'>
+          <form>
+            <input type="text" value={searchInput} placeholder="Search by Title" onChange={handleSearchText}/>
+          </form>
+        </div>
       </div>
       {/* made the searchbar component but need to get it to display just the
-      mapped items matching the search */}
+      mapped itemtem s matching the search */}
       <h2>Exhibits:</h2>
       <div className='exhibit-display'>
-        {filtered.map(exhibit =>
+        {searchResult.map(exhibit =>
         <div className='exhibit-card' key={exhibit._id}>
           <h2>{exhibit.title}</h2> 
           <h4>{exhibit.subtitle}</h4> 
           <img src={exhibit.image}></img>
           <p>{exhibit.imgCaption}</p>
           {/* need to add styling to limit the number of lines that display */}
-          <p className="page-content">{exhibit.pageContent}</p>
+          {/* <p className="page-content">{exhibit.pageContent}</p> */}
           <Link to={`/exhibits/${exhibit._id}`}>Read More...</Link>
         </div>
         )}
