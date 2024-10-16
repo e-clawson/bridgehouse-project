@@ -53,7 +53,7 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits, exhibi
 
     function handleEditChange(e){ 
         const { name, value } = e.target;
-        setFormData((editData) => ({...editData, [name]: value}))
+        setInputData({...inputData, [name]: value})
     }
 
     //make a PATCH request - edit the exhibit by ID 
