@@ -1,6 +1,8 @@
 # bridgehouse-project
 
-live demo here: 
+live demo here: https://bridgehouse-project.netlify.app/ 
+
+to demo the admin settings use admin@admin.com (Bridges123!)
 
 # About 
     This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 wee software engineering bootcamp. 
