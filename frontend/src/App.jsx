@@ -16,7 +16,7 @@ import Contact from './components/Pages/Contact'
 import Footer from './components/Footer/Footer'
 import ExhibitPages from './components/Exhibits/ExhibitPages'
 
-export const BASE_URL = 'http://localhost:8000'
+export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)

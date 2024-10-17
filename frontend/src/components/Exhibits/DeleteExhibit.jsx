@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
 
-export const BASE_URL = 'http://localhost:8000'
+export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
 
 export default function DeleteExhibit({exhibits, setExhibits, exhibitId, id}){
     const navigate = useNavigate()

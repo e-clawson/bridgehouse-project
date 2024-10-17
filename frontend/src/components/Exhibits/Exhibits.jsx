@@ -6,7 +6,7 @@ import Filter from "./Filter"
 import ExhibitForm from './ExhibitForm'
 import AddExhibit from './AddExhibit'
 
-export const BASE_URL = 'http://localhost:8000'
+export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
 
 export default function Exhibits({currentUser, exhibits, setExhibits}) {
   const [searchInput, setSearchInput] = useState("");

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import DeleteExhibit from './DeleteExhibit'
 
-export const BASE_URL = 'http://localhost:8000'
+export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
 
 export default function ExhibitPages({currentUser, exhibits, setExhibits}){
     const [isEditing, setIsEditing] = useState(false)
