@@ -68,6 +68,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
       <div className='filter-search'>
       <div className="filter-box">
             <h3 className="filter-title">Select A Topic or Search:</h3>
+            <br/>
             <div className="filter-btn-box">
                 <div className="filter-btn" type="button" onClick={handleButtons}>All</div>
                 <div className="filter-btn" type="button" onClick={handleButtons}>Architecture</div>
@@ -79,6 +80,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
                 <div className="filter-btn" type="button" onClick={handleButtons}>River</div>
             </div>
         </div>
+        <br/>
         <div className='search'>
           <form>
             <input type="text" value={searchInput} placeholder="Search by Title" onChange={handleSearchText}/>
