@@ -4,10 +4,12 @@ import Footer from "../Footer/Footer"
 
 export default function Events(){
     return (
-         <div className="events">
+    <>
+        <div className="events">
           
             <h1>Events</h1>
-        
+            
         </div>
+    </>
     )
 }
