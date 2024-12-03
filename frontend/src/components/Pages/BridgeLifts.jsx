@@ -8,6 +8,8 @@ export default function BridgeLifts(){
            
             <h1>Bridge Lifts</h1>
             {/* evenutally I will add either a slideshow or the video of the bridge here */}
+            <img src="../src/assets/homepage/BridgeLift.png" class="center" alt="Image of the Museum with the Bridge lifting in the background"/>
+            <br></br>
             <h3>It is quite a scene when Michigan Avenue meets the sky.</h3>
             <p>To accommodate sail boats and other tall vessels traveling between the Chicago River and Lake Michigan, Chicago's bridges open approximately 40 times a year from April to November. Witnessing the Michigan Avenue Bridge opening from inside the McCormick Bridgehouse & Chicago River Museum is quite a treat.</p>
             <p>One spectator raved, “Watching the massive Michigan Avenue Bridge rise to the sky from inside the bridge is amazing. Powered by just a tiny 108 horsepower motor, the gears turn, the bridge rises - and you can’t help but be awed by the ingenuity of it all.” </p>
