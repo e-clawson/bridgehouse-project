@@ -14,6 +14,31 @@
   max-width: 300px;
 }
 
+.background{
+  background-color: rgb(251, 248, 248);
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 50px;
+  border: 1px solid #D0D7DE;
+}
+
+.button{
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.rental-text{
+  display: grid;
+}
+
+.carousel{
+  background-color: rgb(237, 236, 236);
+  padding: 20px;
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

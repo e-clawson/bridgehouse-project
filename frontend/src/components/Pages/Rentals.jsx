@@ -5,11 +5,12 @@ import Footer from "../Footer/Footer"
 
 export default function Rentals(){
     return (
-    <>
-        <div className="rentals" class="padding">
+    <div className="padding">
+        <div className="rentals">
             <h1>Rentals</h1>
             <br></br>
         </div>
+        <div className="carousel">
         <div id="carouselExampleCaptions" class="carousel slide">
              <div class="carousel-indicators">
                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -63,36 +64,80 @@ export default function Rentals(){
                  <span class="visually-hidden">Next</span>
              </button>
         </div>
+        </div>
         <br></br>
 
-        
+        <div className="rental-text">
+            <h5>Venue Rentals at the Bridgehouse</h5>
+            <p>
+            Events at the McCormick Bridgehouse & Chicago River Museum are unparalleled in the City. The Bridgehouse Museum offers rentals for events such as private dinners, cocktail parties, wedding ceremonies and receptions, and bridge lift breakfasts. 
+Nestled inside the southwest tower of the Michigan Avenue bridge, the museum celebrates the Chicago River and offers your guests a rare chance to view the inner workings of one of Chicago's most famous movable bridges.
 
-        <div className="rental-text"> 
-            <h2 class="border border-2 border-dark-subtle"> Information: </h2>
+The Bridgehouse Museum's interior is a unique and rustic space made up of five floors, complete with exposed brick walls and steel beams. With roughly 1,200 sq. ft. of space and a capacity of 79 people, it is ideal for intimate receptions, both private and corporate. Renters are free to work with the caterer of their choice, or one of our preferred caterers.
+
+Due to the uniqueness of the building, seated engagements are typically ideal for approximately 25 or less if using the patio space. It is possible to host seated engagements indoors, but tables need to be spread out over the 5 small floors of the museum.   
+
+Each rental also includes the use of our ~400 square foot Riverwalk plaza, with spectacular views of downtown Chicago visible only from our unique space. 
+            </p>
+        </div>
+
+        <div className="rental-text background"> 
+            <h2> Information: </h2>
+            <br></br>
             <h5>Capacity: 79</h5>
-            
+            <p>(patio space: about 25)</p>
+            <br></br>
+            <h5>Floors: 5</h5>
+            <br></br>
+            <h5>Space: </h5>
+            <p>1,200 sq. feet of interior space</p>
+            <br></br>
             <h5>Rates:</h5>
             <p>Monday - Thursday: $350/hr
             <br></br>
             Friday - Sunday: $375/hr 
             <br></br>
             (8 A.M. -11 P.M.)</p>
-           
+           <br></br>
             <h5>Preferred Caterers:</h5>
             <ul>
                 <li>Inspired By Catering</li>
                 <li>Blue Plate</li>
                 <li>Purple Pig</li>
             </ul>
-
-
-
-
-
-
+            <br></br>
+            <p> <b>For additional information or to schedule a venue tour, contact Josh Coles at (312) 939-0490, ext. 28, or submit a request below</b> </p>
         </div>
 
-    
-    </>
+
+        <div className="background"> 
+            <h5>Rental Inquiry:</h5>
+             <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="name" class="form-control" id="name" placeholder="Name"/>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Preferred Date</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Type of Event</label>
+                <input type="name" class="form-control" id="name" placeholder="Ex: Wedding"/>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Expected Guest Count</label>
+                <input type="name" class="form-control" id="name" placeholder="Ex: 50"/>
+            </div>
+            <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button className="button">Submit</button>
+        </div>
+    </div>
     )
 }
