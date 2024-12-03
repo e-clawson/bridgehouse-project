@@ -55,7 +55,7 @@ export default function AddExhibit({exhibits, setExhibits}){
   }
 
   return(
-    <form id="exhibitForm" onSubmit={handleSubmit}>
+    <form className="background" id="exhibitForm" onSubmit={handleSubmit}>
         <div>
             <h3>Add A Topic:</h3>
             <div>

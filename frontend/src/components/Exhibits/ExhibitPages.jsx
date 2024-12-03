@@ -95,22 +95,28 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits}){
                 {isEditing !== true? (<button onClick={()=>addEditForm(exhibitDisplay)}>Edit</button>)
                 : 
                 <>
-                <div>
+                <div className='background'>
                 <form id="exhibitForm" onSubmit={handleEditSubmit}>
-                <div className="editform">
+                <div className="editform ">
                   <h3>Edit: </h3>
                     <div>
-                      <label>Title
+                      <br/>
+                      <label>Title:
+                        <br></br>
                       <input value={inputData.title} name="title" id="title" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label >Sub-Title
+                      <label >Sub-Title:
+                        <br></br>
                       <input value={inputData.subtitle} name="subtitle" id="subtitle" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label >Museum Floor
+                      <label >Museum Floor:
+                        <br></br>
                       <select type="number" value={inputData.floor} name="floor" id="floor" onChange={handleEditChange}>
                         <option disabled value="">Select...</option>
                         <option value={0} >0 </option>
@@ -122,43 +128,60 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits}){
                       </select>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label>Date (number only: mm-dd-yyyy)
+                      <label>Date (number only: mm-dd-yyyy): 
+                        <br>
+                        </br>
                       <input type={inputData.dateNum} value={""} name="dateNum" id="dateNum" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label> Date in text and numbers (ex: "March 1, 1900")
+                      <label> Date in text and numbers (ex: "March 1, 1900"):
+                        <br></br>
                       <input value={inputData.dateString} name="dateString" id="dateString" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label> Image
+                      <label> Image: 
+                        <br></br>
                       <input type="file" value={""} name="image" id="image" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label>Image Caption
+                      <label>Image Caption:
+                      <br/>
                       <input value={inputData.imgCaption} name="imgCaption" id="imgCaption" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label>Page Content
+                      <label>Page Content: 
+                      <br/>
                       <textarea value={inputData.pageContent} name="pageContent" id="pageContent" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label>Additional Resources (links, citations)
+                      <label>Additional Resources (links, citations):
+                      <br/>
                       <input value={inputData.additionalResources} name="additionalResources" id="additionalResources" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                     <div>
-                      <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, Public Health, Other )
+                      <label>Tags (Please use only the following: Architecture, Bridges and Engineering, History, Nature, Public Health, Other ):
+                      <br/>
                       <input value={inputData.tags} name="tags" id="tags" onChange={handleEditChange}/>
                       </label>
                     </div>
+                    <br/>
                 </div>
-                <button>Update</button>
+                <br></br>
+                <button className='button'>Update</button>
                 </form>
             </div>
              </>}
