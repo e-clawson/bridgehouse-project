@@ -65,19 +65,15 @@ export default function Rentals(){
              </button>
         </div>
         </div>
-        <br></br>
 
-        <div className="rental-text">
+        <div className="rental-text padding">
             <h5>Venue Rentals at the Bridgehouse</h5>
-            <p>
-            Events at the McCormick Bridgehouse & Chicago River Museum are unparalleled in the City. The Bridgehouse Museum offers rentals for events such as private dinners, cocktail parties, wedding ceremonies and receptions, and bridge lift breakfasts. 
-Nestled inside the southwest tower of the Michigan Avenue bridge, the museum celebrates the Chicago River and offers your guests a rare chance to view the inner workings of one of Chicago's most famous movable bridges.
-
-The Bridgehouse Museum's interior is a unique and rustic space made up of five floors, complete with exposed brick walls and steel beams. With roughly 1,200 sq. ft. of space and a capacity of 79 people, it is ideal for intimate receptions, both private and corporate. Renters are free to work with the caterer of their choice, or one of our preferred caterers.
-
-Due to the uniqueness of the building, seated engagements are typically ideal for approximately 25 or less if using the patio space. It is possible to host seated engagements indoors, but tables need to be spread out over the 5 small floors of the museum.   
-
-Each rental also includes the use of our ~400 square foot Riverwalk plaza, with spectacular views of downtown Chicago visible only from our unique space. 
+            <br/>
+            <p>Events at the McCormick Bridgehouse & Chicago River Museum are unparalleled in the City. The Bridgehouse Museum offers rentals for events such as private dinners, cocktail parties, wedding ceremonies and receptions, and bridge lift breakfasts. </p>
+            <p> Nestled inside the southwest tower of the Michigan Avenue bridge, the museum celebrates the Chicago River and offers your guests a rare chance to view the inner workings of one of Chicago's most famous movable bridges. 
+                The Bridgehouse Museum's interior is a unique and rustic space made up of five floors, complete with exposed brick walls and steel beams. With roughly 1,200 sq. ft. of space and a capacity of 79 people, it is ideal for intimate receptions, both private and corporate. 
+            </p><p>Renters are free to work with the caterer of their choice, or one of our preferred caterers. Due to the uniqueness of the building, seated engagements are typically ideal for approximately 25 or less if using the patio space. It is possible to host seated engagements indoors, but tables need to be spread out over the 5 small floors of the museum.</p>   
+            <p>Each rental also includes the use of our ~400 square foot Riverwalk plaza, with spectacular views of downtown Chicago visible only from our unique space. 
             </p>
         </div>
 
