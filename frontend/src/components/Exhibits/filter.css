@@ -1,17 +1,18 @@
 .filter-btn-box{
     background: #1864b0;
-    color: white;
+    color: white; 
 }
 .filter-btn{
     float: left;
     background-color: #E0E7EF;
     color: #1C478C;
     text-align: center;
-    padding: 12px;
+    padding: 10px;
     text-decoration: none;
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+    margin: 2px;
 }
 
 .filter-btn:hover{

@@ -1,8 +1,18 @@
-import Navbar from "../Navbar/Navbar"
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
+import { useState } from "react"
+import "./filter.css"
 
 export default function BridgeLifts(){
+    const [currentTag, setCurrentTag] = useState("All");
+    
+    const handleButtons = (e) => {
+        //takes the value string and stores in in the variable word
+        let word = e.target.value
+        console.log(word)
+        //setsCurrentExhibit with the word 
+        setCurrentTag(word);
+    }
+    console.log(currentTag)
+
     return (
          <div className="bridge-lifts" class="padding">
            
