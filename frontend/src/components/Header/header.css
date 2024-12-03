@@ -23,9 +23,10 @@
 }
 
 .logo img{
-    height: 100px;
-    width: 150px;
+    height: 150px;
+    width: 200px;
     padding: 25px 20px 25px 15px;
+    border-radius: 0px 0px 25px 25px;
     margin: 0px 15px;
     background: white;
 }
