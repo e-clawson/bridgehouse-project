@@ -58,6 +58,7 @@ export default function AddExhibit({exhibits, setExhibits}){
     <form className="background" id="exhibitForm" onSubmit={handleSubmit}>
         <div>
             <h3>Add A Topic:</h3>
+            <br/>
             <div>
                 <label>Title
                 <input value={formData.title} name="title" id="title" onChange={handleChange}/>
@@ -117,7 +118,8 @@ export default function AddExhibit({exhibits, setExhibits}){
                 </label>
             </div>
         </div>
-        <button>Add</button>
+        <br></br>
+        <button className="button">Add</button>
     </form>
     
   )
