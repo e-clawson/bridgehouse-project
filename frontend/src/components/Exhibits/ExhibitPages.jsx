@@ -81,7 +81,7 @@ export default function ExhibitPages({currentUser, exhibits, setExhibits}){
     }
 
     return(
-        <div className="exhibit-page" id={id.exhibitId}>
+        <div className="exhibit-page" id={id.exhibitId} class="padding">
             <h2>{exhibitDisplay.title}</h2> 
             <h4>{exhibitDisplay.subtitle}</h4> 
             <h5>{exhibitDisplay.dateString}</h5>

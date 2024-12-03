@@ -6,7 +6,7 @@ export default function Home(){
     return (
     <>
 
-    <div className="home">
+    <div className="home" class="padding">
         <h1>Welcome to the McCormick Bridgehouse and River Museum Website!</h1>
         <br></br>
     </div>
@@ -36,7 +36,7 @@ export default function Home(){
     </div>
 
     <br></br>
-    
+
     </>
     )
 }

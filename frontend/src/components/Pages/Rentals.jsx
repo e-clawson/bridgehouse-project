@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer"
 export default function Rentals(){
     return (
     <>
-        <div className="rentals">
+        <div className="rentals" class="padding">
             <h1>Rentals</h1>
             <br></br>
         </div>

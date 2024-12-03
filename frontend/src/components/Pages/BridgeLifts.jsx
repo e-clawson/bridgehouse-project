@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer"
 
 export default function BridgeLifts(){
     return (
-         <div className="bridge-lifts">
+         <div className="bridge-lifts" class="padding">
            
             <h1>Bridge Lifts</h1>
             {/* evenutally I will add either a slideshow or the video of the bridge here */}
