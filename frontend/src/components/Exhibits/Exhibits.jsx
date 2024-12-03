@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams } from "react-router-dom"
 import "./exhibits.css"
-import Search from '../Search'
-import Filter from "./Filter"
-import ExhibitForm from './ExhibitForm'
 import AddExhibit from './AddExhibit'
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
@@ -83,7 +80,8 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
         <br/>
         <div className='search'>
           <form>
-            <input type="text" value={searchInput} placeholder="Search by Title" onChange={handleSearchText}/>
+          <img src="../src/assets/searchIcon.png" class="search-icon"/>
+          <input type="text" value={searchInput} placeholder="Search by Title" onChange={handleSearchText}/>
           </form>
         </div>
       </div>
