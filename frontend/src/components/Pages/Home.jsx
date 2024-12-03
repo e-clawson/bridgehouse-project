@@ -4,13 +4,14 @@ import Footer from "../Footer/Footer"
 
 export default function Home(){
     return (
-    <>
+    <div className="padding">
 
     <div className="home" class="padding">
         <h1>Welcome to the McCormick Bridgehouse and River Museum Website!</h1>
         <br></br>
     </div>
 
+    <div className="carousel">
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -34,9 +35,15 @@ export default function Home(){
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    </div>
 
     <br></br>
 
-    </>
+    <h5>The McCormick Bridgehouse & Chicago River Museum celebrates the Chicago River and its world-famous movable bridges.</h5>
+    <p>Beginning at river level and spiraling five stories up, the McCormick Bridgehouse & Chicago River Museum provides a one-of-a-kind opportunity to explore a historic landmark bridgehouse.</p>
+    <p>At river level, visitors can view the massive gears of Chicago’s most famous movable bridge and then journey through time as they experience the story of the Chicago River. Once at the top of the Bridgehouse, visitors are treated to magnificent 360 degree views of the city and river, and will gain a whole new perspective on the beauty and complexity that is Chicago.</p>
+    <p>The Bridgehouse Museum furthers the mission of <a href="https://www.chicagoriver.org/">Friends of the Chicago River.</a></p>
+
+    </div>
     )
 }

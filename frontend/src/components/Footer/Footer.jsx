@@ -16,7 +16,7 @@ export default function Footer({currentUser, setCurrentUser}){
 
     return (
         <>
-        <div className="footer">
+        <div className="footer padding">
             <h4>Sitemap:</h4>
             <Link to="/about">About</Link>
             <Link>Careers</Link>

@@ -94,7 +94,7 @@ export default function AddExhibit({exhibits, setExhibits}){
             </div>
             <div>
                 <label> Image
-                <input type="file" value={formData.image} name="image" id="image" onChange={handleChange}/>
+                <input type="file" name="image" id="image" class="form-control" accept="image/png,image/gif,image/jpg,image/jpeg" onChange={handleChange} />
                 </label>
             </div>
             <div>
