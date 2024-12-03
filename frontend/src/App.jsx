@@ -52,7 +52,7 @@ function App() {
       <Route path="/" element={<Home />}/>
       <Route path="/about" element={<About/>} />
       <Route path="/events" element={<Events/>} />
-      <Route path="/bridgelifts" element={<BridgeLifts/>} />
+      <Route path="/bridgelifts" element={<BridgeLifts exhibits={exhibits} />} />
       <Route path="/exhibits" element={<Exhibits currentUser={currentUser} exhibits={exhibits} setExhibits={setExhibits}/>} />
       <Route path="exhibits/:exhibitId" element={<ExhibitPages exhibitId={exhibitId} currentUser={currentUser} exhibits={exhibits} setExhibits={setExhibits}/>}/>
       <Route path="/venue-rentals" element={<Rentals/>} />
