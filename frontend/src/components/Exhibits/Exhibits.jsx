@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from "react-router-dom"
 import "./exhibits.css"
+import "./filter.css"
 import AddExhibit from './AddExhibit'
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL || VITE_BASE_URL
@@ -61,7 +62,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
     console.log(searchResult)
 
   return (
-    <div>
+    <div className='padding'>
       <div className='filter-search'>
       <div className="filter-box">
             <h3 className="filter-title">Select A Topic or Search:</h3>
@@ -94,7 +95,7 @@ export default function Exhibits({currentUser, exhibits, setExhibits}) {
         {searchResult.map(exhibit =>
         <div className='exhibit-card' key={exhibit._id}>
           <h2>{exhibit.title}</h2> 
-          <h4>{exhibit.subtitle}</h4> 
+          <h6>{exhibit.subtitle}</h6> 
           <img src={exhibit.image}></img>
           <p>{exhibit.imgCaption}</p>
           {/* need to add styling to limit the number of lines that display */}
