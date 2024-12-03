@@ -37,6 +37,14 @@ export default function Footer({currentUser, setCurrentUser}){
             <br/><b>Hours:</b> Open Seasonally, May - October, Wednesday - Sunday, 10am - 4pm
             <br/><b>Phone:</b>(312) 977-0227</p>
 
+            <div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            </div>
+
+        
+
             { currentUser === null ? <Link to="/login">Admin: Login</Link> : <Link onClick={logout} to="/">Admin: Sign Out</Link> }
         </div>
         </>
