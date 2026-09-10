@@ -1,24 +1,30 @@
 # bridgehouse-project
 
 live demo here: https://bridgehouse-project.netlify.app/ 
-
-to demo the admin settings use admin@admin.com (Bridges123!)
+    * to demo the admin settings use admin@admin.com (Bridges123!)
 
 # About 
-    This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 wee software engineering bootcamp. 
+    This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 week software engineering bootcamp. 
 
     The Bridgehouse Museum's mission is to educate the public on the history of the Chicago River, along with the efforts made to clean and beautify it over the last 40 years, as well as current and ongoing projects to continue to care and advocate for the river. 
 
     This project seeks to address three issues related to the museum's ability to fulfill its mission: 
-        - floors 2-5 are not accessible to anyone who can't climb stairs 
-        - the museum is only open seasonally 
-        - the current website curation is old, outdated, and in a format that is hard to use 
-    by providing updated digital curation on the website, the bridgehouse museum can provide curation to those who can't access the museum at all or who cant climb the stairs, to those who would want to learn about the history and ecology of the river outside of our open season, and in a format that is accessible and modren(and easy to navigate and cleanly laid out) 
+        - Floors 2-5 are not accessible to anyone who can't climb stairs 
+        - The museum is only open seasonally 
+        - The current website curation is old, outdated, and in a format that is hard to use 
+        
+    By providing updated digital curation on the website, the bridgehouse museum can provide curation to those who can't access the museum at all or who cant climb the stairs, to those who would want to learn about the history and ecology of the river outside of our open season, and in a format that is accessible and modern(and easy to navigate and cleanly laid out) 
 
-    To accomplish this, I focused on three things: 
+    To accomplish this, I had three goals: 
         - Updating the general layout of the website to be more mobile compatible, and to match the styling of the Bridgehouse Museum's parent organization, Friends of the Chicago River
         - Updating the layout of the exhibits page to inclue card displays for each topic, and a search bar so users can search for a specific topic, as well as filter tabs so users may filter the cards to a specific broader topic such as hitory, nature, etc. - Users can then click on the desired topic to be directed to a page where they can read more 
-        - Adding a new feature - using the Google Maps API to include an interactive map of the river where users can see pinpointed locations where historical events occured plotted on a map, and can select those pinpoints to learn more. My hope is this additional feature can act as a guide for users to use outside the musem along the river and riverwalk, encouraging people to see the locations where history happened, and connect historical events to present day locations. 
+        - (Reach Goal) Adding a new feature - using the Google Maps API to include an interactive map of the river where users can see pinpointed locations where historical events occured plotted on a map, and can select those pinpoints to learn more. My hope is this additional feature can act as a guide for users to use outside the musem along the river and riverwalk, encouraging people to see the locations where history happened, and connect historical events to present day locations. 
+
+        In the timeframe I had, I was able to make the website somewhat mobile compatible, except for the main website heading text. If continuing to work on this project, I would like to add more mobile responsive design to the site tabs at the top, and to the heading. 
+
+        I was also able to better design the style and layout of the page to meet my client's requirements, and to match the parent website. I would expand further on this, maybe even adding in a donate button in the website header like the parent website has.  
+
+        When planning the exhibits page, I was inspired by the Smithsonian's digital curation which features a clear search bar in the center of the page, some pages with cards or tabs that pull up a variety of cards for specific topics, for all with cards displayed below for curatorial items. Using feedback from my manager, I incorporated this for the Bridgehouse website, mirroring the design and layout of the Friends of the Chicago River website for the cards on the homepage for individual links and updates. If expanding on this portion, I might add a way to search by exhibit floor in the museum. I would also find ways to expand accessibility for things like screen readers in my design. 
 
 # Dependencies 
 frontend: 
@@ -38,18 +44,22 @@ Backend:
 
 # How to Use 
 
-# useful links 
-     - my repo of class notes on how to setup a fullstack MERN application 
+# useful links  
      - mongose db documentation - https://mongoosejs.com/ 
      - Reqbin - what I used to test all my routes - https://reqbin.com/ 
      - helpful tutorial refresher on forms in react - https://www.freecodecamp.org/news/how-to-build-forms-in-react/ 
      - google maps API react app walkthrough - https://developers.google.com/codelabs/maps-platform/maps-platform-101-react-js#0 
      - react-google-maps documentation - https://visgl.github.io/react-google-maps/ 
      - google maps cluster marking library - https://developers.google.com/maps/documentation/javascript/marker-clustering 
+     - Original bridgehouse website: https://www.bridgehousemuseum.org/ 
+     - Friends of the Chicago River Website: https://www.chicagoriver.org/ 
+     - Smithsonian Website I used for inspiration - https://www.si.edu/collections 
 
 # acknowledgements 
+A Special Thank you to my Per Scholas teachers Jade and Oussama for their assistance, and my friends JoAnna Brogan and Adam Schuster for helping me work through solutions when I got stuck. A thank you to my entire Per Scholas cohort for your teamwork and support throughout our 16-week program. 
 
----------- capstone assignment notes: ------------
+---------- Per Scholas Capstone assignment notes: ------------
+These are the 
 
 link to capstone rubric: https://www.canva.com/design/DAFwIc109T8/gdYUdmzp7e12XU1jlff30w/edit
 
