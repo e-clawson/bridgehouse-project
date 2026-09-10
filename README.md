@@ -1,8 +1,8 @@
 # bridgehouse-project
 live demo here: https://bridgehouse-project.netlify.app/ 
-    * to demo the admin settings use admin@admin.com (Bridges123!)
 
-    ** the live demo is still active, but the mongoDB has depreceiated - to view a youtube walkthrough of website as it was upon project MVP completion, please use this link: https://www.youtube.com/watch?v=B18BhMWE8pY 
+* to demo the admin settings use admin@admin.com (Bridges123!)
+* the live demo is still active, but the mongoDB has depreceiated - to view a youtube walkthrough of website as it was upon project MVP completion, please use this link: https://www.youtube.com/watch?v=B18BhMWE8pY 
 
 # About 
 This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 week software engineering bootcamp. 
