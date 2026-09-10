@@ -4,7 +4,7 @@ live demo here: https://bridgehouse-project.netlify.app/
     * to demo the admin settings use admin@admin.com (Bridges123!)
 
 # About 
-    This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 week software engineering bootcamp. 
+This project was built as a practice for updating the Chicago Bridgehouse Museum's website and functionality, and as a capstone project for PerScholas' 16 week software engineering bootcamp. 
 
     The Bridgehouse Museum's mission is to educate the public on the history of the Chicago River, along with the efforts made to clean and beautify it over the last 40 years, as well as current and ongoing projects to continue to care and advocate for the river. 
 
